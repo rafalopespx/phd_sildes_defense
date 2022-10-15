@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Dengue Hospitalization and Association with Climate Variables</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Rafael Lopes Paixão da Silva" />
+    <meta name="date" content="2022-04-07" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <link href="libs/pagedtable/css/pagedtable.css" rel="stylesheet" />
+    <script src="libs/pagedtable/js/pagedtable.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Dengue Hospitalization and Association with Climate Variables
+### Rafael Lopes Paixão da Silva
+### IFT, Unesp &amp; ISGlobal
+### 2022-04-07
+
+---
+
+layout: true
+
+
+
+
+
+---
+class: left
+
+## Find me at
+
+.left-column[
+
+  <svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> GitHub: [https://github.com/rafalopespx/](https://github.com/rafalopespx/)
+  
+  <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M160 448c-25.6 0-51.2-22.4-64-32-64-44.8-83.2-60.8-96-70.4V480c0 17.67 14.33 32 32 32h256c17.67 0 32-14.33 32-32V345.6c-12.8 9.6-32 25.6-96 70.4-12.8 9.6-38.4 32-64 32zm128-192H32c-17.67 0-32 14.33-32 32v16c25.6 19.2 22.4 19.2 115.2 86.4 9.6 6.4 28.8 25.6 44.8 25.6s35.2-19.2 44.8-22.4c92.8-67.2 89.6-67.2 115.2-86.4V288c0-17.67-14.33-32-32-32zm256-96H224c-17.67 0-32 14.33-32 32v32h96c33.21 0 60.59 25.42 63.71 57.82l.29-.22V416h192c17.67 0 32-14.33 32-32V192c0-17.67-14.33-32-32-32zm-32 128h-64v-64h64v64zm-352-96c0-35.29 28.71-64 64-64h224V32c0-17.67-14.33-32-32-32H96C78.33 0 64 14.33 64 32v192h96v-32z"/></svg> [lopes1313@gmail.com](mailto:lopes1313@gmail.com)
+  
+  <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> Twitter: [@rafalpx](www.twitter.com/rafalpx)
+
+]
+
+.pull-right[
+
+  ![profile](img/profile_pick.jpeg)
+
+]
+
+---
+
+## Objectives and Questions
+
+**How ambient temperature affects the counts of hospitalization due to Dengue, during the period of 2010-2019?**
+
+Objectives: 
+
+ -1) To quantify association of daily ambient temperature and counts of hospitalization due to Dengue
+
+ -2) To quantify confounding effects of humidity on the association of daily ambient temperature and counts of hospitalization due to Dengue
+
+---
+
+## Dengue Disease
+
+ -1) vector borne disease, human-mosquito-human cycle
+ 
+ -2) Viremia in humans begins toward the end of a four- to six-day incubation period and persists until around the time fever abates, which is typically three to seven days
+ 
+ -3) One of main determinants of severe disease is the Capillary leak syndrome, which might be affected by temperature
+
+---
+
+## Data sources and definitions:
+
+- We used the Brazil national database of authorization for hospitalization (AIH), filtered for the hospitalization cases of Dengue, aggregated by municipality, or health region, or any aggregation that is more suitable to the amount of cases.
+
+- For the climate variable, we used the gridded daily temperature taken from reanalysis products (ERA5Land) 
+
+- We does a weighted mean area aggregation over the municipality extent area, to create matching time series for each municipality.
+
+&lt;!-- The spatial aggregation for sampling the climate data was a buffer of 0.01º square around the point localized for the health unit, given by CNES code. --&gt;
+&lt;!-- The localized down scaling was done by kriging the mean temperature with the altitude height data taken by the USGS DEM database. --&gt;
+
+&lt;!-- --- --&gt;
+
+&lt;!-- ![dengue-summary](img/plot_summary_year.png) --&gt;
+
+---
+
+![dengue-cases-region](img/plot_descriptive_region.png)
+
+&lt;!-- --- --&gt;
+
+&lt;!-- ![dengue-cases-age](img/plot_descriptive_age.png) --&gt;
+
+&lt;!-- --- --&gt;
+
+&lt;!-- ![dengue-cases-capital-res](img/plot_descriptive_capitals_res.png) --&gt;
+
+---
+
+## Study Design
+
+We did a two-stages design, to the association of the daily mean temperature and counts of hospitalization due Dengue.
+
++ First stage: A "Time Stratified" design for the aggregated level of a each of 27 states, with a stratum for each municipality within the state and the month on the time series.
+
++ Second stage: Multivariate Meta-analysis for the coefficients fitted and the Covariance matrix, in two levels of aggregation, for the whole country and for the 5 macro regions of Brazil. 
+      
+      - The model on this level was a multivariate random effects model ran by a restricted maximum likelihood estimator.
+      
+---
+
+## First Stage
+
+On each of 27 states, we run a Conditional Poisson model, over the state level stacked time series of cases and mean temperature for each municipality:
+
+`$$g[E(Y_{tij})] = \xi_{tij} + f(x_{tij},l,\theta_j) + \sum_{j=1}^{J}s_k(t ;j)$$`
+
+Where `\(Y_{tij}\)` is the count of cases by the j-th state on the i-th municipality, `\(\xi_{tij}\)` the month-city strata term conditioned out. `\(f(x_{tij}, l, \theta_j)\)` which is the __DLNM__ for mean temperature on the j-th state by each day of delay, until 21 days of lags. The last term is the long-term trend modelling choice for temperature trend along the whole period, a natural spline with 7 degrees of freedom by year on the whole period.
+
+---
+
+## Crossbasis Parametrization
+
+The "cross-basis" were parametric as the standard in __DLNM__ for mean temperature: 
+
+ + A *natural splines* with 2 knots placed on the 33th and 66th, percentile of mean temperature,
+ for the structure to the doses-response
+ 
+ + A *natural spline* with 3 knots equally spaced on the log-scale for the lag-response structure
+ 
+ + 0 to 21 days of lags
+
+---
+
+## DLNM 101
+
+To analyse this data we used the framework of __DLNM__, **D**istributed **L**ag **N**on-linear **M**odels, a framework developed to deal with delayed effects to an exposure:
+
++ It can deal with complex relation between exposures and Outcome
+
++ Environmental exposures vary greatly, so we need a framework that adapt to it flexibly
+
++ Environmental exposures has temporal and geographical variations, __DLNM__ is constructed to it
+
+---
+
+## Geographical Variation
+
++ Normally exposures varies in a narrow range, environment exposures like temperature __not__, it varies along different locations.
+
++ Normally exposures have a very short time-window of action, environment exposures __not__, it acts all the time for the all the subjects.
+
+---
+
+&lt;img src="img/geo_temp_inset.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Splines 101
+
+To define a spline on an interval `\([a, b]\)`, let `\(a ≤ t1 &lt; t2 &lt; · · · &lt; tk ≤ b\)` be the knot locations. A spline of order `\(q + 1\)` is a q-th degree polynomial on each of the intervals `\((tl , tl+1 )\)`. That is, let:
+
+`$$Pl (x) = β_0l + β_{1l} x + · · · + β_{ql} x^{q}$$`
+
+Then the spline `\(Q(x) = Pl (x)\)` if `\(x ∈ (tl , tl+1 )\)`. For a spline of order `\(q + 1\)`, usually the continuity constraints at the knots specify that the function is continuous, and that the derivatives through order `\(q − 1\)` are also continuous.
+
+---
+
+## Crossbasis 101
+
+With splines: `\(s_1\)`, spline that models the __doses-response__ structure with dimension `\(vx\)` and `\(s_2\)`, spline with dimension `\(νl\)` for the __lag-response__:
+
+`$$Y = s_1(X_0) + s_1(X_{(−1)}) + ... + s_1(X_{(−L)}) + ε \\ R = s_2 ((0, ..., l, ...L))$$`
+
+to be used as a covariates on models, like a __GLM__, __GAM__, __GNM__, etc
+
+---
+
+## Crossbasis 102
+
+Defining the array `\(\dot{D}_{n×ν_x×(L+1)}\)` tridimensional:
+
+`$$Y = \sum^{\nu_x}_{i=1} \dot{D}·i·R\eta_{i} + \epsilon = \sum^{\nu_{x}}_{i=1}W_i\eta_i+\epsilon \\ W = [W_1, ..., W_{\nu_x}]$$`
+
+Where `\(W\)` is the __cross-basis__, a bi-dimensional space generated by the basis functions choose to model the __doses-response__ and __lag-response__ structures
+
+&lt;!-- --- --&gt;
+
+---
+
+class: middle, center
+
+## First Stage Results
+
++ GNM, with Conditional Poisson model, eliminate on the month_city strata
+
++ Stacked all municipality by State
+
+---
+
+&lt;img src="img/gnm_absolute_scale_all_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_relative_scale_all_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_all_state_cold_5th_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_all_state_heat_95th_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Second Stage
+
+For the second stage we choose a multivariate meta-analysis model, on each meta-analysis leve, whole country or by macro region, with the following formulation:
+
+`$$\hat{\theta_i} | u_i \sim N_k (\theta + u_i , S_i ),
+u_i ∼ N_k (\theta, \psi)$$`
+
+Where, `\(\hat{\theta_i}\)` vector `\(k\times1\)` combined effects to estimate, 
+`\(u_i\)` vector `\(k \times 1\)` random effects for coefficients of study `\(i\)`.
+`\(S_i\)` matrix `\(k \times k\)` covariance matrix within studies for the study `\(i\)` and `\(\psi\)` matrix `\(k \times k\)` covariance between studies, defined by `\(k(k + 1)/2\)` variables `\(\xi\)`.
+
+---
+
+class: middle, center
+
+## Second Stage Results, Whole Country Meta-analysis
+
++ Random Effects mixed model
+
++ Fitted by a REML
+
+---
+
+&lt;img src="img/plot_overall_relative_scale_gnm_meta.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/plot_overall_absolute_scale_gnm_meta.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/percentil_effects_meta.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/plot_RR_gnm_meta_relative_scale.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/plot_RR_gnm_meta_absolute_scale.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: middle, center
+
+## Second Stage Results, Regions Meta-analysis
+
++ Random Effects mixed model
+
++ Fitted by a 'REML' 
+
+---
+
+&lt;img src="img/plot_overall_relative_scale_all_regions_gnm_meta.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/plot_overall_absolute_scale_all_regions_gnm_meta.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/percentil_effects_regions_grid.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/plot_RR_gnm_meta_relative_scale.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/plot_RR_gnm_meta_absolute_scale.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Table Summary
+
+&lt;div data-pagedtable="false"&gt;
+  &lt;script data-pagedtable-source type="application/json"&gt;
+{"columns":[{"label":["State"],"name":[1],"type":["chr"],"align":["left"]},{"label":["MHT"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["RR 5th (IC 95%)"],"name":[3],"type":["chr"],"align":["left"]},{"label":["RR 95th (IC 95%)"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"Brazil","2":"0.01","3":"1.025 (1.012-1.039)","4":"1.305 (1.160-1.468)"},{"1":"North","2":"0.01","3":"1.010 (0.987-1.033)","4":"1.217 (1.076-1.375)"},{"1":"AC","2":"0.57","3":"1.004 (0.836-1.207)","4":"1.074 (0.840-1.373)"},{"1":"AM","2":"0.01","3":"1.054 (1.019-1.090)","4":"1.617 (1.258-2.078)"},{"1":"AP","2":"0.32","3":"1.308 (1.025-1.669)","4":"2.076 (1.207-3.572)"},{"1":"PA","2":"0.01","3":"1.009 (0.994-1.024)","4":"1.161 (1.013-1.331)"},{"1":"RO","2":"0.01","3":"1.030 (1.011-1.050)","4":"1.310 (1.127-1.522)"},{"1":"RR","2":"0.40","3":"1.494 (0.938-2.380)","4":"1.679 (1.096-2.570)"},{"1":"TO","2":"0.01","3":"1.007 (0.985-1.029)","4":"1.185 (0.935-1.501)"},{"1":"Northeast","2":"0.01","3":"1.036 (1.019-1.053)","4":"1.445 (1.217-1.715)"},{"1":"AL","2":"0.01","3":"1.060 (1.022-1.099)","4":"1.637 (1.293-2.072)"},{"1":"BA","2":"0.01","3":"1.033 (1.015-1.052)","4":"1.390 (1.256-1.537)"},{"1":"CE","2":"0.01","3":"1.019 (0.998-1.040)","4":"1.270 (1.120-1.440)"},{"1":"MA","2":"0.01","3":"1.020 (1.005-1.035)","4":"1.228 (1.054-1.432)"},{"1":"PB","2":"0.01","3":"1.056 (1.022-1.091)","4":"1.520 (1.230-1.879)"},{"1":"PE","2":"0.01","3":"1.115 (1.070-1.161)","4":"2.727 (2.162-3.440)"},{"1":"PI","2":"0.01","3":"1.021 (1.000-1.043)","4":"1.387 (1.176-1.635)"},{"1":"RN","2":"0.01","3":"1.023 (0.990-1.056)","4":"1.616 (1.316-1.984)"},{"1":"SE","2":"0.99","3":"1.176 (0.859-1.610)","4":"1.055 (1.013-1.098)"},{"1":"Center-West","2":"0.01","3":"1.034 (1.015-1.054)","4":"1.381 (1.198-1.593)"},{"1":"DF","2":"0.01","3":"1.122 (1.015-1.240)","4":"2.566 (1.339-4.919)"},{"1":"GO","2":"0.01","3":"1.019 (1.005-1.033)","4":"1.233 (1.119-1.359)"},{"1":"MS","2":"0.01","3":"1.035 (1.014-1.057)","4":"1.363 (1.195-1.555)"},{"1":"MT","2":"0.01","3":"1.048 (1.020-1.077)","4":"1.608 (1.329-1.945)"},{"1":"Southeast","2":"0.01","3":"1.033 (1.019-1.048)","4":"1.403 (1.262-1.559)"},{"1":"ES","2":"0.01","3":"1.013 (0.979-1.048)","4":"1.278 (1.072-1.522)"},{"1":"MG","2":"0.01","3":"1.028 (1.013-1.044)","4":"1.284 (1.181-1.396)"},{"1":"SP","2":"0.01","3":"1.047 (1.035-1.059)","4":"1.479 (1.377-1.590)"},{"1":"RJ","2":"0.01","3":"1.032 (1.011-1.054)","4":"1.569 (1.384-1.778)"},{"1":"South","2":"0.99","3":"1.100 (0.505-2.399)","4":"1.011 (0.897-1.141)"},{"1":"PR","2":"0.01","3":"1.064 (1.043-1.086)","4":"1.895 (1.685-2.131)"},{"1":"RS","2":"0.99","3":"1.789 (1.523-2.101)","4":"1.089 (1.067-1.111)"},{"1":"SC","2":"0.99","3":"1.479 (1.186-1.845)","4":"1.064 (1.026-1.103)"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  &lt;/script&gt;
+&lt;/div&gt;
+
+---
+
+## Next Steps
+
++ Any other analysis to be run before start writing?
+
++ PAF to be calculated (On which level? Whole Country, by Region, by State?)
+
++ If ready, re-run the analysis with near-ground Relative Humidity
+
+---
+class: middle, center
+# Thank You!
+# ¡Gracias!
+# Obrigado!
+
+<svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> GitHub: [https://github.com/rafalopespx/](https://github.com/rafalopespx/)
+<svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M160 448c-25.6 0-51.2-22.4-64-32-64-44.8-83.2-60.8-96-70.4V480c0 17.67 14.33 32 32 32h256c17.67 0 32-14.33 32-32V345.6c-12.8 9.6-32 25.6-96 70.4-12.8 9.6-38.4 32-64 32zm128-192H32c-17.67 0-32 14.33-32 32v16c25.6 19.2 22.4 19.2 115.2 86.4 9.6 6.4 28.8 25.6 44.8 25.6s35.2-19.2 44.8-22.4c92.8-67.2 89.6-67.2 115.2-86.4V288c0-17.67-14.33-32-32-32zm256-96H224c-17.67 0-32 14.33-32 32v32h96c33.21 0 60.59 25.42 63.71 57.82l.29-.22V416h192c17.67 0 32-14.33 32-32V192c0-17.67-14.33-32-32-32zm-32 128h-64v-64h64v64zm-352-96c0-35.29 28.71-64 64-64h224V32c0-17.67-14.33-32-32-32H96C78.33 0 64 14.33 64 32v192h96v-32z"/></svg>  [lopes1313@gmail.com](mailto:lopes1313@gmail.com)
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> Twitter: [@rafalpx](www.twitter.com/rafalpx)
+
+---
+
+class: inverse
+
+---
+
+&lt;img src="img/gnm_RO_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_RO_relative_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_AC_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_AC_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_AM_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_AM_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_RR_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_RR_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_PA_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_PA_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_AP_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_AP_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_TO_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_TO_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_MA_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_MA_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_PI_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_PI_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_CE_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_CE_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_RN_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_RN_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_PB_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_PB_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_PE_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_PE_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_AL_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_AL_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_SE_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_SE_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_BA_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_BA_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_MG_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_MG_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_ES_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_ES_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_RJ_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_RJ_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_SP_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_SP_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_PR_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_PR_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_SC_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_SC_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_RS_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_RS_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_MS_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_MS_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_MT_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_MT_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_GO_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_GO_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_DF_2knots_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/gnm_DF_absolute_scale_stacked_state_overall_effects.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="img/geo_rh_density.png" width="800" style="display: block; margin: auto;" /&gt;
+---
+
+## Main questions to advance
+
+We ran test to escalate the analysis:
+
+- Ten random cities, it ran but it loose the majority
+
+- For the one hundred most cities with cases, it ran but loose ≈10% of the sample
+
+- For the two hundred most cities with cases, still looses ≈10% of the sample
+
+- Probably when as we grow the number of cities it will looses more than 10% of the sample
+---
+
+## Main questions to advance
+
++ How to solve the problem of sparse data and mode fit?
+
+.center[
+   | PRO | CON
+--------|---------|---------
+Select some high caseload cities, 10 y | Model fitting, 10 years | Criteria to choose, Representativesness
+Select some medium-high caseload, seasonal periods | Model fitting, representativeness | Loose non seasonal periods and years / Some difficult for criteria
+Collapse cities in some hierarchical high level (macro/micro region) | Model fitting, likely whole country/10 years | Loose some granularity on exposure-outcome?
+Macro/micro region by using conditional poisson | Model, 10 years, whole country | Model specification?
+
+]
+
+---
+
+## Main Questions to Advance
+
+&lt;img src="img/gasparrini.png" width="600" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Main questions to advance:
+
++ How to parameterize the __cross-basis__, long-term trend?
+
+.center[
+  | cross-basis | Lag | long-term/seasonal
+ --------|---------|---------
+Use the commonly | Polynomial, 3 degree, Without intercept | NS, 3 knots, on the log-scale equally spaced, With intercept | NS, df=7*nyear + dow
+Options | | | df=8*nyear? Dow?
+]
+
+---
+
+## Main Questions to Advance:
+
++ Try to introduce different variables:
+
+  - A __cross-basis__ for relative humidity?
+  
+  - A __cross-basis__ for total cases?
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<style>
+  .logo {
+    background-image: url(logo-IFT.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: .1em;
+    right: .1em;
+    width: 110px;
+    height: 128px;
+    z-index: 0;
+  }
+</style>
+  
+  <script>
+  document
+.querySelectorAll(
+  '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+  // ':not(.inverse)' +
+    ':not(.hide-logo)'
+)
+.forEach(el => {
+  el.innerHTML += '<div class="logo"></div>';
+});
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
