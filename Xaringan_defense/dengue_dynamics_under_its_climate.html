@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Dengue Cases and Climatic drivers on Rio de Janeiro city</title>
+    <title>Dengue dynamics under climate drivers</title>
     <meta charset="utf-8" />
     <meta name="author" content="Rafael Lopes Paixão da Silva" />
-    <meta name="date" content="2022-10-15" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
@@ -14,7 +13,10 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Dengue Cases and Climatic drivers on Rio de Janeiro city
+# Dengue dynamics under climate drivers
+]
+.subtitle[
+## Analysis with ecological and epidemiological frameworks
 ]
 .author[
 ### Rafael Lopes Paixão da Silva
@@ -23,7 +25,7 @@ class: center, middle, inverse, title-slide
 ### IFT, Unesp
 ]
 .date[
-### 2022-10-15
+### 31-10-2022
 ]
 
 ---
@@ -60,11 +62,104 @@ class: left
 
 ## About me
 
-+ Ph.D. Student in Physics, in the Instituto de Física Teóric - IFT/ UNESP-SP
++ Ph.D. Candidate in Physics, in the Instituto de Física Teórica - IFT/ UNESP-SP
 
-+ I am in the last year of my Ph.D. and planning on defending on end of Abril/beginning of May, 22.
++ Bachelor in Physics by UNICAMP (2014), Master in Physics by IFT/UNES-SP (2018)
 
-+ With a exchange period, in the Barcelona Institute for Global Health, at Barcelona.
++ With a exchange period (2021-2022), in the Barcelona Institute for Global Health (ISGlobal), at Barcelona.
+
+---
+
+## Summary
+
+This presentation is divided into 4 main parts:
+
+ * Historical background on Dengue
+ 
+ * Ecological analysis of Dengue data and climate data
+ 
+ * Epidemiological analysis of Dengue data and temperature data
+ 
+ * Final remarks
+ 
+---
+
+## Research questions
+
+The thesis has two main questions that tries to answer:
+
+ * In the Ecological part: **How temperature and precipitation affects the variability of Dengue cases in a major city of Brazil?** 
+ The study covers 10 years (2010 - 2019) of Dengue incidence
+ 
+ * In the Epidemiological part: **How temperature is associated with higher levels of Dengue hospitalizations in Brazil?**
+ The study covers 10 years (2010 - 2019) of Dengue hospitalization incidence
+ 
+---
+
+## Historical Background
+
+Dengue has been a major problem on Brazil during the 20th Century:
+
+  - First records of Dengue in Brazil starts on the last decades of the 19th century
+  
+  - The main vector of Dengue, _Aedes Aegypti_ got locally eliminated, but was reintroduced in the 1970s
+  
+  - Since then, Dengue has continuously rising in incidence and dispersion over the Brazillian territory
+  
+  - Since 2001, a system of notification dedicated and surveillance specific to the disease was build
+
+---
+
+## Dengue Disease
+
+  - vector borne disease, human-mosquito-human cycle
+
+  - incubation period of four- to six-day and persists until around the time fever abates, which is typically three to seven days, potential of cryptic transmissions
+
+  - Hyperendemic disease in Brazil, with anual cycles of outbreaks
+
+---
+
+## Data sources:
+
+  - From the _Sistema de Informação de Agravos de Notificação_ (SINAN), system more prompt to notify symptomatic mild cases  of Dengue, were aggregated by municipality, health regions, states, and/or any aggregation that is more suitable to the amount of cases.
+  
+  - From the _Sistema de Informação Hospitalares_ (SIH), system more prompt to notify severe cases of Dengue, were aggregated by municipality, health regions, states, and/or any aggregation that is more suitable to the amount of cases.
+
+  - For the climate variable, we used the gridded daily ECVs taken from reanalysis products (ERA5-Land) 
+
+  - From the raw ECVs were produced a weighted mean area aggregation over the municipalities (health regions, states, etc.) extent area, to create matching time series for each aggregation level.
+
+---
+
+## Characteristics of Dataset
+
+  - ~11.0 million of individual cases confirmed for Dengue, with information of Sex, Age, Municipality of Residence, from 2001 to 2020
+
+  - Sparse data before 2000, due to non obligatory notification, more consistent data after 2001
+
+  - With the majority of cases in the Southeast region and Northeast regions, ~5.7 millions and ~2.2 million cases, respectively
+  
+---
+
+## Characteristics of Dengue epidemics
+
+
+  - Strong seasonality, right after the rainy season, relation with mosquito life cycle
+
+  - Hyperendemicity, endemic epidemics outbreaks of four different serotypes
+  
+  - More recently, since 2020, raising on incidence and spread to the South region
+  
+---
+
+&lt;img src="img/dengue_cases_regions_after_2001.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: middle, center
+
+# Ecological analysis
 
 ---
 
@@ -74,62 +169,9 @@ class: left
 
 Objectives: 
 
--1) To quantify causality by *EDM* of t2m and precip and counts of cases due to Dengue
+-1) To quantify climate drivers by *EDM* of temperature and precipitation on counts of cases due to Dengue
 
 -2) Understand which are the climatic drivers and how much they force on cases
-
----
-
-## Dengue Disease
-
--1) vector borne disease, human-mosquito-human cycle
-
--2) incubation period of four- to six-day and persists until around the time fever abates, which is typically three to seven days, potential of cryptic transmissions
-
--3) Hyperendemic disease in Brazil, with anual cycles of outbreaks
-
----
-
-## Data sources and definitions:
-
-- We have the Brazil national database of information system of severe notifications (SINAN), filtered for the cases of Dengue, aggregated by municipality, health regions, states, and/or any aggregation that is more suitable to the amount of cases.
-
-- For the climate variable, we used the gridded daily ECVs taken from reanalysis products (ERA5Land) 
-
-- We did a weighted mean area aggregation over the municipality (health regions, states, etc.) extent area, to create matching time series for each aggregation level.
-
----
-
-## Characteristics of Dataset
-
-- ~+ 20.9 million of individual cases, with information of Sex, Age, Municipality of Residence, fromm 2000 to 2020
-
-- ~+ 12 millions of individual cases, from 2010, less cases on 2016 to 2018, Zika outbreak
-
-- Sparse data before 2000, due to non obligatory notification
-
----
-
-&lt;img src="img/dengue_cases_before_2000.png" width="800" style="display: block; margin: auto;" /&gt;
-
----
-
-
-&lt;img src="img/dengue_cases_after_2000.png" width="800" style="display: block; margin: auto;" /&gt;
-
----
-
-## Characteristics of Dengue epidemics
-
-- Strong seasonality, right after the rainy season, relation with mosquito life cycle
-
-- Hyperendemicity, huge peaks very narrow
-
-- Before Covid-19 was the major public health problem in Brazil, has a low attack rate
-
----
-
-&lt;img src="img/map_after_2000_states.png" width="800" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -175,11 +217,11 @@ Framework to analyse time series seeking for causality between them:
 
 ---
 
-## Rio de Janeiro
+## Dengue in Rio de Janeiro city
 
-- Pipeline implemented like as in the Laneri et al.
+Typical procedure of *EDM*
 
-- 1) Extract the seasonality of the drivers, make a distribution of surrogate time series.
+  1) Extract the seasonality of the drivers, make a distribution of surrogate time series.
 
   2) Do the CCM with the Original time-series and 500 Surrogates series with the same seasonality pattern
   
@@ -203,7 +245,7 @@ The algorithm we use is:
  
  - substract this seasonality pattern from the original driver time series
  
- - The residuals are shuffled and on this is added the seasonality pattern
+ - The residuals are shuffled yearly and after is added the seasonality pattern
  
  - This new surrogate time series for the climate driver, has the same seasonal pattern but different residuals
  
@@ -211,15 +253,11 @@ The algorithm we use is:
 
 ---
 
-&lt;img src="img/seasonality_temp_mean.png" width="800" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/patch_pattern_seasonality.png" width="700" style="display: block; margin: auto;" /&gt;
 
 ---
 
-&lt;img src="img/seasonality_total_precip_mean.png" width="800" style="display: block; margin: auto;" /&gt;
-
----
-
-## Surrogate Diagnostics
+## Surrogate statistical test
 
 To create each surrogate time series, we pick the seasonality pattern and add a sample of residuals randomly shuffled:
 
@@ -227,49 +265,46 @@ To create each surrogate time series, we pick the seasonality pattern and add a 
  
  - When putting this on the CCM function, we ask if the seasonal pattern is driving the dynamics, if yes, the surrogates will have a better prediction skill then the original time series
  
- - The dynamics will them linked to the seasonality of the driver not the itself
- 
----
-
-&lt;img src="img_v4/plot_seasonality_all_drivers.png" width="700" style="display: block; margin: auto;" /&gt;
+ - The dynamics will them linked to the seasonality of the driver and not to the climate driver itself
 
 ---
 
-&lt;img src="img_v4/plot_ts_residuals.png" width="700" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/patch_final_surrogates.png" width="700" style="display: block; margin: auto;" /&gt;
 
 ---
 
-&lt;img src="img_v6/patch_final_surrogates.png" width="700" style="display: block; margin: auto;" /&gt;
+## Surrogates testing
 
----
+Now we want to find where in the time for prediction, `\(tp\)`, the original driver is most significant causal:
 
-## Surrogating testing
-
-Now we want to find where in the time for prediction `\(tp\)` the original driver is most significant causal:
-
- - Apply CCM on the 500 surrogates and the Original time series for various `\(tp\)` values
+ - We apply CCM on the 500 surrogates and the Original time series for various `\(tp\)` values, of maximum 17 weeks of delay
  
  - Where the Original driver time series is above the 95th percentile of the distribution it causally significant
 
 ---
 
-&lt;img src="img_v5/yearly_shuffle_boxplot_52_weeks_tp_type.png" width="800" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/yearly_shuffle_boxplot_17_weeks_tp_type.png" width="700" style="display: block; margin: auto;" /&gt;
 
 ---
 
-&lt;img src="img_v5/boxplot_drivers_tp_sig_52_weeks.png" width="800" style="display: block; margin: auto;" /&gt;
+## Surrogates testing
+
+ - Where the original driver has a value of cross-mapping skill higher the 95th percentile of the distribution we color it in red
+ 
+ - We repeat this procedure of identifiying where the original driver is stastistically significant through over all the `\(tp\)` values tested
+---
+
+&lt;img src="img/yearly_shuffle_boxplot_drivers_tp_sig_17_weeks.png" width="700" style="display: block; margin: auto;" /&gt;
 
 ---
 
 ## Force of Interaction
 
-With the at the time for prediction where the original driver is causal significant and where it is has the greater `\(\rho\)` we estimate the force of interaction:
-
- - With the drivers that are most significant and for the `\(tp\)` which is has highest `\(\rho\)` form a dataset
+With the climate driver and the time for prediction where the original driver is causal significant and where it is has the greater `\(\rho\)` we estimate the force of interaction:
  
  - Using the S-Map algorithm, we estimate the effect of the driver, at the `\(tp\)`, on the time series of Cases
  
- - Two models: I) Adding Diff Cases in the SSR II) Diff Cases as the target for the smap
+ - S-Map is a non-parametric method of locally weighted Jacobian Element for the prediction of the cases time-series from the climate drivers SSR
 
 ---
 
@@ -279,7 +314,7 @@ The S-Map has the following formula, which it is a Singular Value Decomposition 
 
 $$
 `\begin{equation}
-y(t) = \mathbf{C_0} + \sum_{i=1}^{I} \mathbf{C_i}(t) x_i(t),
+Cases(t) = \mathbf{C_0} + \sum_{i=1}^{I} \mathbf{C_i}(t) x_i(t),
 \end{equation}`
 $$
 
@@ -297,106 +332,49 @@ If `\(\theta\)` is `\(0\)` or close to `\(0\)` the model understand the influenc
 
 ---
 
+&lt;img src="img/yearly_shuffle_tp_17_theta_min_mae_rmse.png" width="700" style="display: block; margin: auto;" /&gt;
+
+---
+
 ## S-Map Models
 
-  * Model I) `\(\langle \Delta Case(t), Precip_{max}(t-2), Precip_{min}(t-7))\rangle\)`
-  
-  * Model II) `\(\langle Precip_{max}(t-2), Precip_{min}(t-7))\rangle\)`, but the target is the `\(\Delta Cases(t)\)`
-
----
-
-class: middle, center
-
-
-  Model I) `\(\langle \Delta Case(t), Precip_{max}(t-2), Precip_{min}(t-7))\rangle\)`
-
-
----
-
-## S-Map
-
-The Model we are considering is `\(tp\)` until the first 0 of the ACf for the Cases time series, `\(tp\)` max is 17 weeks, model for the S-Map: 
-
-`$$\langle \Delta Cases(t), Precip_{max}(t-2), Precip_{min}(t-7))\rangle$$`
-
----
-
-&lt;img src="img_v8/yearly_shuffle_tp_17_add_diffcases_theta_min_mae_rmse.png" width="750" style="display: block; margin: auto;" /&gt;
-
----
-
-## Theta choice
-
-With the value of theta for the minimum on MAE, we can ow estimate the forces of interaction, `\(C_i(t)\)` for each drivers ( `\(Precip_{min}\)`, `\(Precip_{max}\)` ) on the the effect:
+We then employ the following model to the force of interaction estimation:
 
 $$
-`\begin{eqnarray}
-Cases(t) &amp;=&amp; C_0 + \frac{\partial Cases(t)}{\partial \Delta Cases(t)}\Delta Cases(t) \\
-&amp;+&amp; \frac{\partial Cases(t)}{\partial Precip_{max}(t - 2)}Precip_{max}(t - 2) \\
-&amp;+&amp; \frac{\partial Cases(t)}{\partial Precip_{min}(t - 7)}Precip_{min}(t - 7)
-\end{eqnarray}`
+`\begin{multline}
+Cases(t) = \mathbf{C_0} + \frac{\partial Cases(t)}{\partial Precip_{max}(t-2)}Precip_{max}(t-2)+ \\
+\frac{\partial Cases(t)}{\partial Precip_{min}(t-7)}Precip_{min}(t-7)
+\end{multline}`
 $$
 
----
-
-&lt;img src="img_v8/patchwork_coef_precips_tp_17_add_diffCases.png" width="750" style="display: block; margin: auto;" /&gt;
+Where `\(C_0\)` is a constant term and the folliwng terms are the coeffcients to be estimated locally over the SSR constructed with the time-series `\(Cases(t),Precip_{min}(t-7), Precip_{max}(t-2)\)`
 
 ---
-
-&lt;img src="img_v8/patchwork_coef_all_tp_17_add_diffCases.png" width="750" style="display: block; margin: auto;" /&gt;
-
----
-
-class: middle, center
-
-
-  * Model II) `\(\langle Precip_{max}(t-2), Precip_{min}(t-7))\rangle\)`, but the target is the `\(\Delta Cases(t)\)`
-
-
----
-
-## S-Map
-
-The Model we are considering is `\(tp\)` until the first 0 of the ACf for the Cases time series, `\(tp\)` max is 17 weeks, model for the S-Map: 
-
-`$$\langle Precip_{max}(t-2), Precip_{min}(t-7))\rangle$$`
-
-
-but the target is the `\(\Delta Cases(t)\)`
-
----
-
-&lt;img src="img_v8/yearly_shuffle_tp_17_add_diffcases_target_diffcases_theta_min_mae_rmse.png" width="750" style="display: block; margin: auto;" /&gt;
-
----
-
-## Theta choice
-
-With the value of theta for the minimum on MAE, we can ow estimate the forces of interaction, `\(C_i(t)\)` for each drivers ( `\(Precip_{min}\)`, `\(Precip_{max}\)` ) on the the effect:
-
-$$
-`\begin{eqnarray}
-\Delta Cases(t) &amp;=&amp; C_0 + \frac{\partial \Delta Cases(t)}{\partial Precip_{max}(t - 2)}Precip_{max}(t - 2) \\
-&amp;+&amp; \frac{\partial \Delta Cases(t)}{\partial Precip_{min}(t - 7)}Precip_{min}(t - 7)
-\end{eqnarray}`
-$$
-
----
-
-&lt;img src="img_v8/patchwork_coef_precips_tp_17_add_diffcases_target_diffcases.png" width="800" style="display: block; margin: auto;" /&gt;
+ 
+&lt;img src="img/patchwork_coef_precip_tp_17.png" width="750" style="display: block; margin: auto;" /&gt;
 
 ---
 
 ## Conclusion &amp; Interpretation
 
- * __Minimum Temperature__, __Mean Temperature__ and __Minimum Preciptation__ are climate drivers of Cases at Rio de Janeiro cit, but them drivers cases by seasonality and not by its variability. So they are a conditions that is matched by season on year. When in the right range that is favourable to the mosquito cycle, Temperatures shorts the Extrinsic Incubation period, this is a contribution always positive and above suitable temperature for transmission.
+ * __Temperatures__ are climate drivers of Cases at Rio de Janeiro city, but them drives cases in the city by its seasonality and not by its variability, due to not being found as drivers by CCM. So they are a conditions that is matched by a season on year.
 
- * __Maximum Precipitation__ has an lagged effect on cases of 2 weeks, and it decreases with the rising of maximum amount precipitation, we understand it as being a driver that has a saturation effect on the forcing, after a certain amount precipitation do not forces clearly in a positive way.
+ * __Maximum Precipitation__ has an lagged effect on cases of 2 weeks, and it decreases with the rising of maximum amount precipitation, we understand it as being a driver that has a saturation effect on the forcing, flushing effects on mosquito life cycle.
  
- * __Minimum Precipation__ has a lagged effect on cases of 7 week, sometimes negative sometimes positive, probably a always present driver factor, after drought any amount of precipitation helps the mosquito cycle. But after another extreme amount of minimum precipitation loss its effects on cases.
+ * __Minimum Precipation__ has a lagged effect on cases of 7 week, in the same shape as Max. Preciptation, after drought any amount of precipitation helps the mosquito cycle. 
  
- * Precipitations drives the cases by variability at the right conditions, if it is too much or too little forcing on the Cases, the effect is negative. When not, the effect it is positive.
+ * Precipitations drives the cases by variability at the right conditions.
  
+---
+
+class: middle, center
+
+# Epidemiological analysis
+
+---
+
+
+
 ---
 
 class: middle, center
@@ -410,31 +388,6 @@ class: middle, center
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> Twitter: [@rafalpx](www.twitter.com/rafalpx)
 
 ---
-
-&lt;img src="img/coef_time_series.png" width="750" style="display: block; margin: auto;" /&gt;
-
----
-
-&lt;img src="img_v8/coef_precip_min_tp_17.png" width="750" style="display: block; margin: auto;" /&gt;
-
----
-
-&lt;img src="img_v8/coef_precip_max_tp_17.png" width="750" style="display: block; margin: auto;" /&gt;
-
----
-
-&lt;img src="img_v8/coef_precip_min_tp_17_add_diffCases.png" width="750" style="display: block; margin: auto;" /&gt;
-
----
-
-&lt;img src="img_v8/coef_precip_max_tp_17_add_diffCases.png" width="750" style="display: block; margin: auto;" /&gt;
-
----
-
-&lt;img src="img_v8/coef_casest1_tp_17_add_diffCases.png" width="750" style="display: block; margin: auto;" /&gt;
-
-
-
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
