@@ -5,7 +5,11 @@
     <meta charset="utf-8" />
     <meta name="author" content="Rafael Lopes Paixão da Silva" />
     <script src="libs/header-attrs/header-attrs.js"></script>
-    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
     <link href="libs/pagedtable/css/pagedtable.css" rel="stylesheet" />
     <script src="libs/pagedtable/js/pagedtable.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
@@ -76,13 +80,13 @@ class: left
 
 This presentation is divided into 4 main parts:
 
-* Historical background on Dengue
++ Historical background on Dengue
 
-* Ecological analysis of Dengue data and climate data
++ Ecological analysis of Dengue data and climate data
 
-* Epidemiological analysis of Dengue data and temperature data
++ Epidemiological analysis of Dengue data and temperature data
 
-* Final remarks
++ Final remarks
 
 ---
 
@@ -95,6 +99,12 @@ The study covers 10 years (2010 - 2019) of Dengue incidence
 
 * In the Epidemiological part: **How temperature is associated with higher levels of Dengue hospitalizations in Brazil?**
 The study covers 10 years (2010 - 2019) of Dengue hospitalization incidence
+
+---
+
+class: middle, center, inverse
+
+# Historical Background
 
 ---
 
@@ -159,7 +169,7 @@ Dengue has been a major problem on Brazil during the 20th Century:
 
 ---
 
-class: middle, center
+class: middle, center, inverse
 
 # Ecological analysis
 
@@ -369,7 +379,7 @@ Where `\(C_0\)` is a constant term and the folliwng terms are the coeffcients to
 
 ---
 
-class: middle, center
+class: middle, center, inverse
 
 # Epidemiological analysis
 
@@ -463,8 +473,12 @@ Why we make use of such models? Because enviromental exposures has two main feat
 
 For the second stage we choose a multivariate meta-analysis model, on each meta-analysis level, whole country or by macro region, with the following formulation:
 
-`$$\hat{\theta_i} | u_i \sim N_k (\theta + u_i , S_i ),
-u_i ∼ N_k (\theta, \psi)$$`
+$$
+`\begin{equation}
+\hat{\theta_i} | u_i \sim N_k (\theta + u_i , S_i ), \\
+u_i ∼ N_k (\theta, \psi)
+\end{equation}`
+$$
 
 Where, `\(\hat{\theta_i}\)` vector `\(k\times1\)` combined effects to the estimate, 
 `\(u_i\)` vector `\(k \times 1\)` random effects for coefficients of study `\(i\)`.
@@ -513,7 +527,7 @@ class: middle, center
 
 ---
 
-class: middle, center
+class: middle, center, inverse
 
 # Final Remarks and Next steps
 

@@ -32,16 +32,37 @@ library(knitr)
 library(DT)
 library(RefManageR)
 library(icons)
-duo_accent(
-  primary_color = "#A70000",
-  secondary_color = "#ff0000",
+# duo_accent(
+#   primary_color = "#A70000",
+#   secondary_color = "#ff0000",
+#   white_color = "white",
+#   header_font_google = google_font("Roboto Condensed"),
+#   text_font_google   = google_font("Roboto Condensed", "300", "300i"),
+#   code_font_google   = google_font("Ubuntu Mono"), text_font_size = "30px")
+# use_extra_styles(
+#   hover_code_line = TRUE, 
+#   mute_unhighlighted_code = TRUE)
+xaringanthemer::style_mono_accent(
+  base_color = "#A70000",
+  #  primary_color = "#A70000",
+  #secondary_color = "#ff0000",
   white_color = "white",
+  colors = c(
+    red = "#A70000",
+    purple = "#88398a",
+    orange = "#ff8811",
+    green = "#136f63",
+    blue = "#4B4FFF",
+    white = "#FFFFFF",
+    black = "#181818"
+  ),
   header_font_google = google_font("Roboto Condensed"),
   text_font_google   = google_font("Roboto Condensed", "300", "300i"),
-  code_font_google   = google_font("Ubuntu Mono"), text_font_size = "30px")
-use_extra_styles(
-  hover_code_line = TRUE, 
-  mute_unhighlighted_code = TRUE)
+  code_font_google   = google_font("Ubuntu Mono"),
+  text_font_size = "30px",
+  code_font_size = "30px",
+  )
+xaringanExtra::use_share_again()
 ```
 
 ---
@@ -82,13 +103,13 @@ class: left
 
 This presentation is divided into 4 main parts:
 
-* Historical background on Dengue
++ Historical background on Dengue
 
-* Ecological analysis of Dengue data and climate data
++ Ecological analysis of Dengue data and climate data
 
-* Epidemiological analysis of Dengue data and temperature data
++ Epidemiological analysis of Dengue data and temperature data
 
-* Final remarks
++ Final remarks
 
 ---
 
@@ -101,6 +122,12 @@ The study covers 10 years (2010 - 2019) of Dengue incidence
 
 * In the Epidemiological part: **How temperature is associated with higher levels of Dengue hospitalizations in Brazil?**
 The study covers 10 years (2010 - 2019) of Dengue hospitalization incidence
+
+---
+
+class: middle, center, inverse
+
+# Historical Background
 
 ---
 
@@ -167,7 +194,7 @@ knitr::include_graphics("img/dengue_cases_regions_after_2001.png")
 
 ---
 
-class: middle, center
+class: middle, center, inverse
 
 # Ecological analysis
 
@@ -397,7 +424,7 @@ knitr::include_graphics('img/patchwork_coef_precip_tp_17.png')
 
 ---
 
-class: middle, center
+class: middle, center, inverse
 
 # Epidemiological analysis
 
@@ -493,11 +520,15 @@ knitr::include_graphics("img/geo_temp_inset.png")
 
 For the second stage we choose a multivariate meta-analysis model, on each meta-analysis level, whole country or by macro region, with the following formulation:
 
-$$\hat{\theta_i} | u_i \sim N_k (\theta + u_i , S_i ),
-u_i ∼ N_k (\theta, \psi)$$
+$$
+\begin{equation}
+\hat{\theta_i} | u_i \sim N_k (\theta + u_i , S_i ), \\
+u_i ∼ N_k (\theta, \psi)
+\end{equation}
+$$
 
 Where, $\hat{\theta_i}$ vector $k\times1$ combined effects to the estimate, 
-$u_i$ vector $k \times 1$ random effects for coefficients of study $i$.
+$u_i$ vector $k \times 1$ random effects for the coefficients of study $i$.
 $S_i$ matrix $k \times k$ covariance matrix within studies for the study $i$ and $\psi$ matrix $k \times k$ covariance between studies, defined by $k(k + 1)/2$ variables $\xi$.
 
 ---
@@ -548,7 +579,7 @@ rmarkdown::paged_table(table)
 
 ---
 
-class: middle, center
+class: middle, center, inverse
 
 # Final Remarks and Next steps
 

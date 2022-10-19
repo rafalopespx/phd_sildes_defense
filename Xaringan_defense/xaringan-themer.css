@@ -36,31 +36,37 @@
   --code-font-is-google: 1;
   --base-font-size: 20px;
   --text-font-size: 30px;
-  --code-font-size: 0.9rem;
+  --code-font-size: 30px;
   --code-inline-font-size: 1em;
   --header-h1-font-size: 2.75rem;
   --header-h2-font-size: 2.25rem;
   --header-h3-font-size: 1.75rem;
 
   /* Colors */
-  --text-color: #000000;
+  --text-color: #272822;
   --header-color: #A70000;
   --background-color: white;
   --link-color: #A70000;
   --text-bold-color: #A70000;
   --code-highlight-color: rgba(255,255,0,0.5);
-  --inverse-text-color: #000000;
-  --inverse-background-color: #ff0000;
-  --inverse-header-color: #000000;
+  --inverse-text-color: white;
+  --inverse-background-color: #A70000;
+  --inverse-header-color: white;
   --inverse-link-color: #A70000;
   --title-slide-background-color: #A70000;
   --title-slide-text-color: white;
   --header-background-color: #A70000;
   --header-background-text-color: white;
-  --primary: #A70000;
-  --secondary: #ff0000;
+  --base: #A70000;
   --white: white;
-  --black: #000000;
+  --black: #272822;
+  --red: #A70000;
+  --purple: #88398a;
+  --orange: #ff8811;
+  --green: #136f63;
+  --blue: #4B4FFF;
+  --white: #FFFFFF;
+  --black: #181818;
 }
 
 html {
@@ -177,7 +183,7 @@ img, video, iframe {
   max-width: 100%;
 }
 blockquote {
-  border-left: solid 5px #ff000080;
+  border-left: solid 5px #A7000080;
   padding-left: 1em;
 }
 .remark-slide table {
@@ -192,7 +198,7 @@ th, td {
   padding: 5px;
 }
 .remark-slide thead, .remark-slide tfoot, .remark-slide tr:nth-child(even) {
-  background: #FFCCCC;
+  background: #EDCCCC;
 }
 table.dataTable tbody {
   background-color: var(--background-color);
@@ -202,7 +208,7 @@ table.dataTable.display tbody tr.odd {
   background-color: var(--background-color);
 }
 table.dataTable.display tbody tr.even {
-  background-color: #FFCCCC;
+  background-color: #EDCCCC;
 }
 table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.5);
@@ -272,17 +278,53 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   }
 }
 
-.primary {
-  color: var(--primary);
+.base {
+  color: var(--base);
 }
-.bg-primary {
-  background-color: var(--primary);
+.bg-base {
+  background-color: var(--base);
 }
-.secondary {
-  color: var(--secondary);
+.white {
+  color: var(--white);
 }
-.bg-secondary {
-  background-color: var(--secondary);
+.bg-white {
+  background-color: var(--white);
+}
+.black {
+  color: var(--black);
+}
+.bg-black {
+  background-color: var(--black);
+}
+.red {
+  color: var(--red);
+}
+.bg-red {
+  background-color: var(--red);
+}
+.purple {
+  color: var(--purple);
+}
+.bg-purple {
+  background-color: var(--purple);
+}
+.orange {
+  color: var(--orange);
+}
+.bg-orange {
+  background-color: var(--orange);
+}
+.green {
+  color: var(--green);
+}
+.bg-green {
+  background-color: var(--green);
+}
+.blue {
+  color: var(--blue);
+}
+.bg-blue {
+  background-color: var(--blue);
 }
 .white {
   color: var(--white);
