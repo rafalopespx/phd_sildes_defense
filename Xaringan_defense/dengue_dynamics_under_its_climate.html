@@ -422,11 +422,12 @@ We did a two-stages design, to the association of the daily mean temperature and
 
 + Second stage: Multivariate Meta-analysis for the coefficients fitted and the Covariance matrix, in two levels of aggregation, for the whole country and for the 5 macro regions of Brazil. 
 
-- The model on this level was a multivariate random effects model ran by a restricted maximum likelihood estimator.
+  - The model on this level was a multivariate random effects model ran by a restricted maximum likelihood estimator.
+
 
 ---
 
-## Model specification, First stage
+## Model specification, first stage
 
 &lt;!-- Before desribing the model itself, we settle down some concepts on statistical models used. When describing a model we construct it from the likelihood we suppose it gives the distribution of the data.  --&gt;
 In this study we suppose the Dengue hospitalization counts in the city `\(i\)` at time `\(t\)` is given by a `\(Poisson(\lambda_{i,t})\)` distribution, with the conditional that `\(Y_{.,t} = \sum_i Y_{i,t}\)`, an alternative formulation of an `\(quasiPoisson\)` distribution to account for overdispersed data:
@@ -441,7 +442,7 @@ Where the `\(\lambda_{i,t}\)` and `\(\psi\)` is the parameter to control overdis
 
 ---
 
-## Model specification, First Stage
+## Model specification, first stage
 
 On each of 27 states, we run a Conditional Poisson model, for the association between Dengue hospitalizations time series and mean temperature for each municipality:
 
