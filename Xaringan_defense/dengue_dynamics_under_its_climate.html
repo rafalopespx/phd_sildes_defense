@@ -94,8 +94,7 @@ This presentation is divided into 4 main parts:
 
 The thesis has two main questions that tries to answer:
 
-* In the Ecological part: **How temperature and precipitation affects the variability of Dengue cases in a major city of Brazil?** 
-The study covers 10 years (2010 - 2019) of Dengue incidence
+* In the Ecological part: **How temperature and precipitation affects the variability of Dengue cases in a major city of Brazil?** The study covers 10 years (2010 - 2019) of Dengue incidence
 
 * In the Epidemiological part: **How temperature is associated with higher levels of Dengue hospitalizations in Brazil?**
 The study covers 10 years (2010 - 2019) of Dengue hospitalization incidence
@@ -124,11 +123,22 @@ Dengue has been a major problem on Brazil during the 20th Century:
 
 ## Dengue Disease
 
-- vector borne disease, human-mosquito-human cycle
+.pull-left[
 
-- incubation period of four- to six-day and persists until around the time fever abates, which is typically three to seven days, potential of cryptic transmissions
+  - vector borne disease, human-mosquito-human cycle
 
-- Hyperendemic disease in Brazil, with anual cycles of outbreaks
+  - incubation period of four- to six-day and persists until around the time fever abates, 
+which is typically three to seven days, potential of cryptic transmissions
+
+  - Hyperendemic disease in Brazil, with anual cycles of outbreaks
+
+]
+
+.pull-right[
+
+&lt;img src="img/Aedes_aegypti.jpg" width="2400" /&gt;
+
+]
 
 ---
 
@@ -155,7 +165,6 @@ Dengue has been a major problem on Brazil during the 20th Century:
 ---
 
 ## Characteristics of Dengue epidemics
-
 
 - Strong seasonality, right after the rainy season, relation with mosquito life cycle
 
@@ -432,13 +441,13 @@ Where the `\(\lambda_{i,t}\)` and `\(\psi\)` is the parameter to control overdis
 
 ---
 
-## Model specificatio, First Stage
+## Model specification, First Stage
 
 On each of 27 states, we run a Conditional Poisson model, for the association between Dengue hospitalizations time series and mean temperature for each municipality:
 
 `$$log[\lambda_{i,t}] = \xi_{t,i} + f(x_{t,i},l) + \sum_{k=1}^{K}s_k(t)$$`
 
-Where `\(Y_{t,i}\)` is as before the count of cases at `\(t\)` on the i-th municipality, `\(\xi_{t,i}\)` the dow-month-city strata term conditioned out. `\(f(x_{t,i}, l)\)` which is the __DLNM__ for mean temperature on the state by each day of delay, until 21 days of lags. The last term is the long-term trend modelling choice for temperature trend along the whole period, a natural spline with 7 degrees of freedom by year on the whole period.
+Where `\(Y_{t,i}\)` is as before the count of cases at `\(t\)` on the i-th municipality, `\(\xi_{t,i}\)` the dow-month-city strata term conditioned out. `\(f(x_{t,i}, l)\)` which is the __DLNM__ for mean temperature on the state by each day of delay, until 21 days of lags. The last term is the long-term trend for temperature trend along the whole period, a natural spline with 7 degrees of freedom by year on the whole period.
 
 ---
 
@@ -481,7 +490,7 @@ u_i ∼ N_k (\theta, \psi)
 $$
 
 Where, `\(\hat{\theta_i}\)` vector `\(k\times1\)` combined effects to the estimate, 
-`\(u_i\)` vector `\(k \times 1\)` random effects for coefficients of study `\(i\)`.
+`\(u_i\)` vector `\(k \times 1\)` random effects for the coefficients of study `\(i\)`.
 `\(S_i\)` matrix `\(k \times k\)` covariance matrix within studies for the study `\(i\)` and `\(\psi\)` matrix `\(k \times k\)` covariance between studies, defined by `\(k(k + 1)/2\)` variables `\(\xi\)`.
 
 ---
@@ -534,15 +543,28 @@ class: middle, center, inverse
 
 ---
 
-## Summary
+## Summary, Ecological part
 
-On a general view, this thesis has studied the dynamics of mild to severe cases of Dengue in Brazil, during the a period of 10 years, from 2010 to 2019.
+On this part we had studied the dynamics of mild to severe cases of Dengue in Brazil, during the a period of 10 years, from 2010 to 2019.
 
-- In the first part, we investigated how temperature and precipitation drives the dynamics of cases in a major city that has a historical of endemicity od Dengue, for the cited period.
+- we investigated how temperature and precipitation drives the dynamics of cases in a major city that has a historical of endemicity od Dengue, for the cited period.
 
 * Main finding is that precipitation is a driver of the dynamics of cases through the variability of the time-series, and it has a lagged relation for this forcing, being 2 weeks lagged for the maximum precipitation and 7 weeks for the minimum precipitation
 
-* Secondary finding, is that temperature has a whole on the dynamics of dengue cases through seasonality
+* Secondary finding, is that temperature has a role on the dynamics of dengue cases through seasonality
+
+---
+
+
+## Summary, Epidemiological part
+
+On this part we had studied the dynamics of severe hospitalized cases of Dengue in Brazil, during the a period of 10 years, from 2010 to 2019.
+
+- we investigated how temperature is associated with dengue hospitalizations in the whole country at the level of municipality, and how this can give an augmented risk to hospitalizations.
+
+* Main finding is that temperature above 20 degrees Celsius is consistently associated with higher levels of hospistalisations, over the whole country and the for each of the macro-regions.
+
+* Secondary finding, is that temperature has lagged effects when producing augmented risks to the hospistalisations.
 
 ---
 
@@ -554,33 +576,55 @@ class: middle, center
 
 ## Published Articles
 
-  * Coutinho, R.M., Marquitti, F.M.D., Ferreira, L.S., Borges, M.E., __da Silva, R.L.P.__, Canton, O., Portella, T.P., Poloni, S., Franco, C., Plucinski, M.M. and Lessa, F.C., 2021.
+  * **Model-based estimation of transmissibility and reinfection of SARS-CoV-2 P. 1 variant**
+  Coutinho, R.M., Marquitti, F.M.D., Ferreira, L.S., Borges, M.E., __da Silva, R.L.P.__, Canton, O., Portella, T.P., Poloni, S., Franco, C., Plucinski, M.M. and Lessa, F.C., 2021.
   [https://www.nature.com/articles/s43856-021-00048-6](https://www.nature.com/articles/s43856-021-00048-6) 
-  *Model-based estimation of transmissibility and reinfection of SARS-CoV-2 P. 1 variant*. 
   Communications Medicine, 1(1), pp.1-8.
 
-  * Marquitti, F.M.D., Coutinho, R.M., Ferreira, L.S., Borges, M.E., Portella, T.P., __Silva, R.L.P.__, Canton, O., Poloni, S., Franco, C., Coelho, V. and Barberia, L., 2021.
+  * **Brazil in the face of new SARS-CoV-2 variants: emergencies and challenges in public health**. 
+  Marquitti, F.M.D., Coutinho, R.M., Ferreira, L.S., Borges, M.E., Portella, T.P., __Silva, R.L.P.__, Canton, O., Poloni, S., Franco, C., Coelho, V. and Barberia, L., 2021.
   [https://www.scielo.br/j/rbepid/a/fMnYkyJKLhpwj8fF8dkbgKQ/?lang=en](https://www.scielo.br/j/rbepid/a/fMnYkyJKLhpwj8fF8dkbgKQ/?lang=en) 
-  *Brazil in the face of new SARS-CoV-2 variants: emergencies and challenges in public health*. 
   Revista Brasileira de Epidemiologia, 24.
+  
+  
+---
 
-  * Souto Ferreira, L., Canton, O., __da Silva, R.L.P.__, Poloni, S., Sudbrack, V., Borges, M.E., Franco, C., Marquitti, F.M.D., de Moraes, J.C., Veras, M.A.D.S.M. and Kraenkel, R.A., 2022.
+## Published Articles
+
+  * **Assessing the best time interval between doses in a two-dose vaccination regimen to reduce the number of deaths in an ongoing epidemic of SARS-CoV-2** 
+  Souto Ferreira, L., Canton, O., __da Silva, R.L.P.__, Poloni, S., Sudbrack, V., Borges, M.E., Franco, C., Marquitti, F.M.D., de Moraes, J.C., Veras, M.A.D.S.M. and Kraenkel, R.A., 2022.
   [https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009978](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009978)
-  *Assessing the best time interval between doses in a two-dose vaccination regimen to reduce the number of deaths in an ongoing epidemic of SARS-CoV-2.* 
   PLoS computational biology, 18(3), p.e1009978.
 
 ---
 
 ## Submitted Articles
 
-  * __da Silva, R.L.P__, Basagana, X., Bastos, L.S., Bozza, F.A. and Ranzani, O.T., 2022.
+  * **Ambient Temperature and Dengue Hospitalisation in Brazil over a 10-year period, 2010-2019: a times series analysis** 
+  __da Silva, R.L.P__, Basagana, X., Bastos, L.S., Bozza, F.A. and Ranzani, O.T., 2022.
   [https://www.medrxiv.org/content/medrxiv/early/2022/04/15/2022.04.05.22273394.full.pdf](https://www.medrxiv.org/content/medrxiv/early/2022/04/15/2022.04.05.22273394.full.pdf)
-  *Ambient Temperature and Dengue Hospitalisation in Brazil over a 10-year period, 2010-2019: a times series analysis.* 
   medRxiv. (Under Review in The Lancet Regional Americas)
 
-  * Ferreira, L.S., Marquitti, F.M.D., __da Silva, R.L.P__, Borges, M.E., Gomes, M.F., Cruz, O.G., Kraenkel, R.A., Coutinho, R.M., Prado, P.I. and Bastos, L.S., 2021. 
+  * **Estimating the impact of implementation and timing of COVID-19 vaccination program in Brazil: a counterfactual analysis**
+  Ferreira, L.S., Marquitti, F.M.D., __da Silva, R.L.P__, Borges, M.E., Gomes, M.F., Cruz, O.G., Kraenkel, R.A., Coutinho, R.M., Prado, P.I. and Bastos, L.S., 2021. 
   [https://www.medrxiv.org/content/medrxiv/early/2021/12/27/2021.12.24.21268384.full.pdf](https://www.medrxiv.org/content/medrxiv/early/2021/12/27/2021.12.24.21268384.full.pdf)
-  *Estimating the impact of implementation and timing of COVID-19 vaccination program in Brazil: a counterfactual analysis.* medRxiv.
+   medRxiv.
+
+---
+
+## Software published
+
+.pull-left[
+
+During the covid-19 pandemic, together with Leaonardo Bastos, we build a wrapping R package **Nowcaster** to produce at necessity age-dependent nowcastings, to correct the notification delay of cases, the package website is: [https://www.covid19br.github.io/nowcaster](https://www.covid19br.githubu.io/nowcaster)
+
+]
+
+.pull-right[
+
+# &lt;a href='https://github.com/covid19br/nowcaster'&gt;&lt;img src='img/nowcaster.png' align="right" width="240" /&gt;&lt;/a&gt; &lt;a href='https://github.com/covid19br/nowcaster'&gt;&lt;img src='img/nowcaster_rev.png' align="right" width="240" /&gt;&lt;/a&gt;
+
+]
 
 ---
 
@@ -596,10 +640,58 @@ class: middle, center
 
 ---
 
-## Model specification, First stage
+class: middle, center, inverse
 
-&lt;!-- Before desribing the model itself, we settle down some concepts on statistical models used. When describing a model we construct it from the likelihood we suppose it gives the distribution of the data.  --&gt;
-In this study we suppose the Dengue hospitalization counts in the city `\(i\)` at time `\(t\)` is given by a `\(Poisson(\lambda_{i,t})\)` distribution, with the conditional that `\(Y_{.,t} = \sum_i Y_{i,t}\)`, this actually is a `\(Multinomial\)` model as below, which we use an alternative formulation of an `\(quasiPoisson\)` distribution to account for overdispersed data:
+# Appendices
+
+---
+
+## Takens Theorem
+
+The importance of Takens theorem, in view of applications, is that we can reconstruct an
+attractor solely from one of its variables time-series. It means that we can use `\(X_1\)` to obtain the attractor of the system that generated the time-series `\(X_1\)`, without any knowledge of the underlying equations. The reconstruction is built considering an m-dimensional space with time-lagged coordinates:
+
+`$$\{X_1 (t), X_1 (t + \tau ), X_1 (t + 2\tau ), ...X_1 (t + (m − 1)\tau \}$$`
+
+By considering the time-series `\(X_1 (t)\)` for all t, we will have a sub-manifold of the m-dimensional space. This sub-manifold has a one-to-one correspondence with the original attractor of the system. Takens theorem
+guarantees that the dimension m is, at most, `\(2n + 1\)`.
+
+---
+
+## Simplex Projection, I
+
+The simplex projection is basically a method
+to follow `\(n\)` time steps ahead each of the simplex points encapsulating a single point, the
+predictee point, `\(\hat{X}(t+n)\)`.
+
+$$
+`\begin{equation}
+\hat{X}(t+n) = \sum_{i=1}^{E+1}w_iX_i(t+n)
+\end{equation}`
+$$
+When varying how many delays we put into the embedding dimension of reconstructed state-space, we can choose the optimal embedding
+dimension for the system.
+
+---
+
+## Simplex Projection, II
+
+After realising this projection for the whole time series, i.e., using all the points we compare the observed time series and the predictied one, from this we can given an good estimate on how good is the projection we are building:
+
+$$
+`\begin{equation}
+\rho_{O,P} = \frac{Cov[O,P]}{\sigma_O \sigma_P}
+\end{equation}`
+$$
+
+The embeddign dimensions will be the dimension for which this correlation reaches its maximum, this means the dimension is sufficient to reconstruct completely the original dynamics
+
+
+---
+
+## Model building, First stage
+
+In this study we suppose the Dengue hospitalization counts in the city `\(i\)` at time `\(t\)` is given by a `\(Poisson(\lambda_{i,t})\)` distribution, with the conditional that `\(Y_{.,t} = \sum_i Y_{i,t}\)`, this actually is a `\(Multinomial\)` model, which we use an alternative formulation of an `\(quasiPoisson\)` distribution to account for overdispersed data:
 
 $$
 `\begin{equation}
@@ -608,6 +700,81 @@ Y_{i,t}|Y_{.,i} \sim Multinomial(\pi_{i,t}) \equiv quasiPoisson(\lambda_{i,t},\p
 $$
 
 Where `\(\pi_{i,t}\)` is given by the relation `\(\pi_{i,t} = \frac{\exp(\boldsymbol{\beta^T\boldsymbol{x_i}})}{\sum_{j\in t}\exp{\boldsymbol{\beta^{T}\boldsymbol{x_j}}}}\)` and equivalently for the `\(\lambda_{i,t}\)`, and we choose a log link-function
+
+---
+
+## Cross-basis, I
+
+Cross-basis is an advance on the enviromental epidemiology, cause it permits to construct a non-linear covariate that encompasses delays when studiying associationn between environmental factors and epidemiological outocomes of interest. To do so, we start construct a naive model, the Distributed Linear Model, __DLM__. A first __DLM__ is:
+
+$$
+`\begin{equation}
+\log[E[Y_t]] = \alpha + \beta_0x_t + \beta_1x_{t-1} + \dots + \beta_jx_{t-j} + Covariates \dotsc, 
+\end{equation}`
+$$
+This model has the pathologically case of introducing vartiables that will produce over and underestimates to the association, but it was a first attempt to model dealyed relation in epidemiology.
+
+---
+
+## Cross-basis, II
+
+A way to overcome this is by using splines to smooth this covariates introduced: 
+
+$$
+`\begin{equation}
+log(\mu_t) = \alpha + \sum_{j=1}^{J}s_j(x_{tj}; \boldsymbol{\beta}_j) + Covariates
+\end{equation}`
+$$
+
+Where `\(s_j(x_{tj}; \boldsymbol{\beta}_j)\)` is the smoothing function, which can be reshaped to be turned into a more flexible form that can encompasses non-linear forms to the model.
+
+
+---
+
+## Cross-basis, III
+
+The way to do this is by producing a _Basis-function_ that will expand eahc of the dimension, lag-response and dose-response into a smoothed version. This guarantees no over and/or understimation during the model processing.
+
+$$
+`\begin{equation}
+log(\mu_t) = \alpha + \sum_{j=1}^{J}\mathbf{w}_{t,j}^T\boldsymbol{\eta} + Covariates
+\end{equation}`
+$$
+
+Where `\(s(x_t;\boldsymbol{\eta}) = \mathbf{q}_t^T \cdot \mathbf{C} \boldsymbol{\eta} = \mathbf{w}_t^T\boldsymbol{\eta}\)`, is the _basis-function_ expanding the covariate into a its lags with a smoothing form for it.
+
+---
+
+## Cross-basis, IV
+
+To construct a flexible and non-linear version of _DLM_ basically is to expand the `\(s(x_t; \boldsymbol{\eta})\)`, at same time on the dimension of lags and dose, this will produce the a covariate that can be seen as a surface:
+
+$$
+`\begin{equation}
+s(x_t ; \boldsymbol{\eta}) = \sum_{j=1}^{v_x}\sum_{k=1}^{v_l}\mathbf{r}^T_{t j} \mathbf{c}_{k } \eta_{jk} = \mathbf{w}^T_{t} \boldsymbol{\eta}
+\end{equation}`
+$$
+
+Where the `\(s(x_t; \boldsymbol{\eta})\)` is called __cross-basis__, this is a resulta of a Haddamard product of two Kroenecker products, given by: `\(\mathbf{A}_{t} = (\mathbf{1}_{v_l}^T \otimes \mathbf{R}_t) \odot (\mathbf{C} \otimes \mathbf{1}_{v_x}^T),\)`
+
+---
+
+## Model building, Second stage
+
+As before, in the second stage we build a meta-analysis multivariate model to estimate, by different aggergations setting, the overall RR for Dengue hospitalization. To do so, we start imposing that for each `\(\hat{\theta_{i}}\)` study estimates we model its variance and covariance relation, with:
+
+$$
+`\begin{equation}
+\hat{\theta_i} | u_i \sim N_k (\theta + u_i, S_i ), \\
+u_i ∼ N_k (\theta, \psi)
+\end{equation}`
+$$
+
+Where, `\(\hat{\theta_i}\)` vector `\(k\times1\)` combined effects to the estimate, 
+`\(u_i\)` vector `\(k \times 1\)` random effects for the coefficients of study `\(i\)`.
+`\(S_i\)` matrix `\(k \times k\)` covariance matrix within studies for the study `\(i\)` and `\(\psi\)` matrix `\(k \times k\)` covariance between studies, defined by `\(k(k + 1)/2\)` variables `\(\xi\)`.
+
+----
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
