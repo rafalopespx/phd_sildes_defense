@@ -125,12 +125,12 @@ Dengue has been a major problem on Brazil during the 20th Century:
 
 .pull-left[
 
-  - vector borne disease, human-mosquito-human cycle
+  vector borne disease, human-mosquito-human cycle
 
-  - incubation period of four- to six-day and persists until around the time fever abates, 
+  incubation period of four- to six-day and persists until around the time fever abates, 
 which is typically three to seven days, potential of cryptic transmissions
 
-  - Hyperendemic disease in Brazil, with anual cycles of outbreaks
+  Hyperendemic disease in Brazil, with anual cycles of outbreaks
 
 ]
 
@@ -144,13 +144,30 @@ which is typically three to seven days, potential of cryptic transmissions
 
 ## Data sources:
 
-- From the _Sistema de Informação de Agravos de Notificação_ (SINAN), system more prompt to notify symptomatic mild cases  of Dengue, were aggregated by municipality, health regions, states, and/or any aggregation that is more suitable to the amount of cases.
 
-- From the _Sistema de Informação Hospitalares_ (SIH), system more prompt to notify severe cases of Dengue, were aggregated by municipality, health regions, states, and/or any aggregation that is more suitable to the amount of cases.
+.pull-left[
 
-- For the climate variable, we used the gridded daily ECVs taken from reanalysis products (ERA5-Land) 
+__Epidemiological data sources__
 
-- From the raw ECVs were produced a weighted mean area aggregation over the municipalities (health regions, states, etc.) extent area, to create matching time series for each aggregation level.
+  - From the _Sistema de Informação de Agravos de Notificação_ (SINAN), system more prompt to notify symptomatic mild cases of Dengue
+
+  - From the _Sistema de Informação Hospitalares_ (SIH), system more prompt to notify severe cases of Dengue
+
+
+]
+
+.pull-right[
+
+__Climate data sources__
+
+  - For the climate variable, we used the gridded daily ECVs taken from reanalysis products (ERA5-Land) 
+
+  - From the raw ECVs were produced a weighted mean area aggregation over the municipalities (health regions, states, etc.) 
+  extent area, to create matching time series for each aggregation level.
+
+
+]
+
 
 ---
 
@@ -430,7 +447,7 @@ We did a two-stages design, to the association of the daily mean temperature and
 ## Model specification, first stage
 
 &lt;!-- Before desribing the model itself, we settle down some concepts on statistical models used. When describing a model we construct it from the likelihood we suppose it gives the distribution of the data.  --&gt;
-In this study we suppose the Dengue hospitalization counts in the city `\(i\)` at time `\(t\)` is given by a `\(Poisson(\lambda_{i,t})\)` distribution, with the conditional that `\(Y_{.,t} = \sum_i Y_{i,t}\)`, an alternative formulation of an `\(quasiPoisson\)` distribution to account for overdispersed data:
+In this study we suppose the Dengue hospitalization counts in the city `\(i\)` at time `\(t\)` is given by a `\(Poisson(\lambda_{i,t})\)` distribution, with the conditional that `\(Y_{.,t} = \sum_i Y_{i,t}\)`, for overdispersed data it used as a `\(quasiPoisson\)` distribution to account for overdispersed data:
 
 $$
 `\begin{equation}
@@ -438,7 +455,7 @@ Y_{i,t} \sim quasiPoisson(\lambda_{i,t},\psi)
 \end{equation}`
 $$
 
-Where the `\(\lambda_{i,t}\)` and `\(\psi\)` is the parameter to control overdispersion, and we choose a log fucntion for the link-function
+Where the `\(\lambda_{i,t}\)` and `\(\psi\)` is the parameter to control overdispersion, and we choose a log function for the link-function
 
 ---
 
@@ -529,7 +546,7 @@ class: middle, center
 ## Conclusion &amp; Interpretation
 
 * The main finding is that are higher risk of being hospitalised by Dengue as the temperature gets higher.
-* After 20 degrees Celsius, the risk is 1·2x higher than for the minimum temperature observed (10·8 º C)
+* After 20 degrees Celsius, the risk is 1·2x higher than for the minimum temperature of hospitalisation (10·8 º C)
 
 * We found a stronger immediate effect on the RR to the hospitalisation. 
 
