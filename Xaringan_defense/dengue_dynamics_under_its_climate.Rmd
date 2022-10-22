@@ -75,7 +75,7 @@ class: left
 
 `r fontawesome::fa("github")` GitHub: [https://github.com/rafalopespx/](https://github.com/rafalopespx/)
 
-`r fontawesome::fa("envelopes-bulk")` e-Mail: [lopes1313@gmail.com](mailto:lopes1313@gmail.com)
+`r fontawesome::fa("mail-bulk")` e-Mail: [lopes1313@gmail.com](mailto:lopes1313@gmail.com)
 
 `r fontawesome::fa("twitter")` Twitter: [@rafalpx](www.twitter.com/rafalpx)
 
@@ -707,7 +707,7 @@ class: middle, center
 # Obrigado!
 
 `r fontawesome::fa("github")` GitHub: [https://github.com/rafalopespx/](https://github.com/rafalopespx/)
-`r fontawesome::fa("envelopes-bulk")`  [lopes1313@gmail.com](mailto:lopes1313@gmail.com)
+`r fontawesome::fa("mail-bulk")`  [lopes1313@gmail.com](mailto:lopes1313@gmail.com)
 `r fontawesome::fa("twitter")` Twitter: [@rafalpx](www.twitter.com/rafalpx)
 
 ---
@@ -838,7 +838,7 @@ As before, in the second stage we build a meta-analysis multivariate model to es
 $$
 \begin{equation}
 \hat{\theta_i} | u_i \sim N_k (\theta + u_i, S_i ), \\
-u_i ∼ N_k (\theta, \psi)
+u_i ∼ N_k (0, \psi)
 \end{equation}
 $$
 
