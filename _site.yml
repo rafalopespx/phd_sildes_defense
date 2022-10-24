@@ -6,6 +6,7 @@ plugins:
 author: "Rafael Lopes, Ph.D. Candidate"
 description: |
   Ph.D. slides defense
+output_dir: "docs"
 navbar:
   search: true
   right:
