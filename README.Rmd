@@ -1,0 +1,15 @@
+---
+title: ""
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Ph.D. Slides defense
+
+Repository for my Ph.D. slides defense
+
+Thesis title: "Dengue dynamics under climate drivers, \n
+              Analysis with ecological and epidemiological frameworks"
