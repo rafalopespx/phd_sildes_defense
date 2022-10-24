@@ -912,3 +912,8 @@ $u_i$ vector $k \times 1$ random effects for the coefficients of study $i$.
 $S_i$ matrix $k \times k$ covariance matrix within studies for the study $i$ and $\psi$ matrix $k \times k$ covariance between studies, defined by $k(k + 1)/2$ variables $\xi$.
 
 ---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, out.width=800}
+knitr::include_graphics("img/crossplot_SP.png")
+```
+
