@@ -1,0 +1,15 @@
+name: "Dengue Dynamics"
+title: "Dengue dynamics under its climate"
+theme: jekyll.css
+author: "Rafael Lopes, Ph.D. Candidate"
+description: |
+  Ph.D. slides defense
+output_dir: "docs"
+navbar:
+  search: true
+  right:
+    - text: "Home"
+      href: index.html
+    - icon: fab fa-github
+      href: https://github.com/rafalopespx/phd_slides_defense
+output: distill::distill_article
