@@ -191,7 +191,7 @@ __Climate data sources__
 
 ---
 
-&lt;img src="img/dengue_cases_regions_after_2001.png" width="800" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/dengue_cases_regions_after_2001.png" width="750" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -199,11 +199,13 @@ class: middle, center, inverse
 
 # Ecological analysis
 
+In collaboration with: Brenno Caetano Troca Cabella, Renato Mendes Coutinho, Roberto André Kraenkel
+
 ---
 
 ## Objectives and Questions
 
-**How Temperatures &amp; Total Preciptations affects the counts of Cases due to Dengue in Brazil, during 2010-2019?**
+**How Temperatures &amp; Total Preciptations affects the counts of Cases due to Dengue in Rio de Janeiro, during 2010-2019?**
 
 Objectives: 
 
@@ -252,6 +254,48 @@ Framework to analyse time series seeking for causality between them:
 ---
 
 &lt;img src="img/Causality.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Convergent Cross-Mapping
+
+To employ the Takens theorem in practice, we seek for points in one __Shadow-Manifold__, say `\(\mathbf{M}_X\)` with the same temporal indexes, into the other, say `\(\mathbf{M}_Y\)`, and we follow ahead those points `\(n\)` steps, to give a prediction to the future of points into the other manifold, in a equation:
+
+$$
+`\begin{equation}
+\hat{Y}(t+n)|\mathbf{M_X} = \sum_{i=1}^{E+1}w_iY_i(t+n)
+\end{equation}`
+$$
+
+Repeating this mapping for the complete set of points of each time series, we can have a prediction of `\(Y\)` given the points of `\(X\)`, and vice-versa.
+
+---
+
+## Causality Criteria
+
+With the last equation, we can give a prediction for `\(Y\)` given points in `\(\mathbf{M}_X\)`, the comparison between the observed time series of `\(Y(t)\)` and the predicted time series `\(\hat{Y}(t)|\mathbf{M}_X\)`, is the measure of how strong linked each __shadow-manifold__ is to the other:
+
+$$
+`\begin{equation}
+\rho = \rho_{Y,\hat{Y}|\mathbf{M_X}} = \rho_{CCM}(L) = \langle \frac{Cov[Y,\hat{Y}|\mathbf{M_X}]}{\sigma_Y\sigma_{\hat{Y}|\mathbf{M_X}}} \rangle(L)
+\end{equation}`
+$$
+
+If this correlation converges to a value, given the totality of points, `\(L\)`, this is the criteria for the causality and linking between the both __Shadow-manifolds__.
+
+---
+
+## Time for prediction
+
+Another part of the EDM framework is to know how much lagged a climate driver that forces into the cases, to do so we test different time for prediction, `\(tp\)`, which are different horizons for the mapping between the __shadow-manifold__, modifying the CCM equation we have:
+
+$$
+`\begin{equation}
+\hat{Y}(t+n+tp)|\mathbf{M_X} = \sum_{i=1}^{E+1}w_iY_i(t+n)
+\end{equation}`
+$$
+
+Where `\(tp\)` is how much ahead of the contemporaneous time we are trying to predict, or how much the relation is lagged from the contemporaneous time, after testing different numbers of `\(tp\)`, we end with a distribution of `\(\rho_{CCM}\)` for different lags
 
 ---
 
@@ -408,6 +452,8 @@ Where `\(C_0\)` is a constant term and the folliwng terms are the coeffcients to
 class: middle, center, inverse
 
 # Epidemiological analysis
+
+In collaboration with: Xavier Basagaña, Leonardo S. L. Bastos, Fernando A. Bozza, Otavio T. Ranzani
 
 ---
 
@@ -642,6 +688,25 @@ During the covid-19 pandemic, together with Leaonardo Bastos, we build a wrappin
 
 # &lt;a href='https://github.com/covid19br/nowcaster'&gt;&lt;img src='img/nowcaster.png' align="right" width="240" /&gt;&lt;/a&gt; &lt;a href='https://github.com/covid19br/nowcaster'&gt;&lt;img src='img/nowcaster_rev.png' align="right" width="240" /&gt;&lt;/a&gt;
 
+]
+
+---
+
+## Acknowledgements
+
+.pull-left[
+
+- To my financing agencies for the financial support, CNPq, for the Ph.D. fellowship and CAPES for the exchange period abroad fellowship
+
+- To the IFT for the material support and program support, to the ISGlobal for the exchange period
+
+]
+
+.pull-right[
+
+# &lt;a href='https://www.gov.br/capes/pt-br'&gt;&lt;img src='img/logo-capes.jpg' align="right" width="240" /&gt;&lt;/a&gt; &lt;a href='https://www.gov.br/cnpq/pt-br'&gt;&lt;img src='img/logo-cnpq.png' align="right" width="240" /&gt;&lt;/a&gt;
+
+# &lt;a href='https://www.ift.unesp.br'&gt;&lt;img src='img/logo-IFT.png' align="right" width="240" /&gt;&lt;/a&gt; &lt;a href='https://www.isglobal.org'&gt;&lt;img src='img/logo-ISGlobal.png' align="right" width="240" /&gt;&lt;/a&gt;
 ]
 
 ---
