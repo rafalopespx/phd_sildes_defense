@@ -9,4 +9,4 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Welcome! This website has my PhD slides defense
 
-[here you found those slides](dengue_dynamics_under_its_climate.html)
+[here you found those slides](Xaringan_defense/dengue_dynamics_under_its_climate.html)
