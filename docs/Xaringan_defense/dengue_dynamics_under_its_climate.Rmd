@@ -694,12 +694,12 @@ class: middle, center
 
 ## Published Articles
 
-  * **Model-based estimation of transmissibility and reinfection of SARS-CoV-2 P. 1 variant**
+  * **Model-based estimation of transmissibility and reinfection of SARS-CoV-2 P. 1 variant**,\n
   Coutinho, R.M., Marquitti, F.M.D., Ferreira, L.S., Borges, M.E., __da Silva, R.L.P.__, Canton, O., Portella, T.P., Poloni, S., Franco, C., Plucinski, M.M. and Lessa, F.C., 2021.
   [https://www.nature.com/articles/s43856-021-00048-6](https://www.nature.com/articles/s43856-021-00048-6) 
   Communications Medicine, 1(1), pp.1-8.
 
-  * **Brazil in the face of new SARS-CoV-2 variants: emergencies and challenges in public health**. 
+  * **Brazil in the face of new SARS-CoV-2 variants: emergencies and challenges in public health**,\n 
   Marquitti, F.M.D., Coutinho, R.M., Ferreira, L.S., Borges, M.E., Portella, T.P., __Silva, R.L.P.__, Canton, O., Poloni, S., Franco, C., Coelho, V. and Barberia, L., 2021.
   [https://www.scielo.br/j/rbepid/a/fMnYkyJKLhpwj8fF8dkbgKQ/?lang=en](https://www.scielo.br/j/rbepid/a/fMnYkyJKLhpwj8fF8dkbgKQ/?lang=en) 
   Revista Brasileira de Epidemiologia, 24.
@@ -709,7 +709,7 @@ class: middle, center
 
 ## Published Articles
 
-  * **Assessing the best time interval between doses in a two-dose vaccination regimen to reduce the number of deaths in an ongoing epidemic of SARS-CoV-2** 
+  * **Assessing the best time interval between doses in a two-dose vaccination regimen to reduce the number of deaths in an ongoing epidemic of SARS-CoV-2**,\n
   Souto Ferreira, L., Canton, O., __da Silva, R.L.P.__, Poloni, S., Sudbrack, V., Borges, M.E., Franco, C., Marquitti, F.M.D., de Moraes, J.C., Veras, M.A.D.S.M. and Kraenkel, R.A., 2022.
   [https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009978](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009978)
   PLoS computational biology, 18(3), p.e1009978.
@@ -718,12 +718,12 @@ class: middle, center
 
 ## Submitted Articles
 
-  * **Ambient Temperature and Dengue Hospitalisation in Brazil over a 10-year period, 2010-2019: a times series analysis** 
+  * **Ambient Temperature and Dengue Hospitalisation in Brazil over a 10-year period, 2010-2019: a times series analysis**,\n
   __da Silva, R.L.P__, Basagana, X., Bastos, L.S., Bozza, F.A. and Ranzani, O.T., 2022.
   [https://www.medrxiv.org/content/medrxiv/early/2022/04/15/2022.04.05.22273394.full.pdf](https://www.medrxiv.org/content/medrxiv/early/2022/04/15/2022.04.05.22273394.full.pdf)
   medRxiv. (Under Review in The Lancet Regional Americas)
 
-  * **Estimating the impact of implementation and timing of COVID-19 vaccination program in Brazil: a counterfactual analysis**
+  * **Estimating the impact of implementation and timing of COVID-19 vaccination program in Brazil: a counterfactual analysis**,\n
   Ferreira, L.S., Marquitti, F.M.D., __da Silva, R.L.P__, Borges, M.E., Gomes, M.F., Cruz, O.G., Kraenkel, R.A., Coutinho, R.M., Prado, P.I. and Bastos, L.S., 2021. 
   [https://www.medrxiv.org/content/medrxiv/early/2021/12/27/2021.12.24.21268384.full.pdf](https://www.medrxiv.org/content/medrxiv/early/2021/12/27/2021.12.24.21268384.full.pdf)
    medRxiv.
@@ -734,7 +734,7 @@ class: middle, center
 
 .pull-left[
 
-During the covid-19 pandemic, together with Leaonardo Bastos, we build a wrapping R package **Nowcaster** to produce at necessity age-dependent nowcastings, to correct the notification delay of cases, the package website is: [https://www.covid19br.github.io/nowcaster](https://www.covid19br.githubu.io/nowcaster)
+During the covid-19 pandemic, together with **Leaonardo Bastos**, we build a wrapping R package **Nowcaster** to produce at necessity age-dependent nowcastings, to correct the notification delay of cases, the package website is: [https://www.covid19br.github.io/nowcaster](https://www.covid19br.githubu.io/nowcaster)
 
 ]
 
@@ -821,8 +821,7 @@ $$
 \end{equation}
 $$
 
-The embeddign dimensions will be the dimension for which this correlation reaches its maximum, this means the dimension is sufficient to reconstruct completely the original dynamics
-
+The embedding dimensions will be the dimension for which this correlation reaches its maximum, this means the dimension is sufficient to reconstruct completely the original dynamics
 
 ---
 
