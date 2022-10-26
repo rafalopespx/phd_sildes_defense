@@ -91,11 +91,13 @@ class: left
 
 ## About me
 
-+ Ph.D. Candidate in Physics, in the Instituto de Física Teórica - IFT/ UNESP-SP
-
-+ Bachelor in Physics by UNICAMP (2014), Master in Physics by IFT/UNES-SP (2018)
++ Ph.D. Candidate in Physics at the Instituto de Física Teórica - IFT/ UNESP-SP
 
 + With a exchange period (2021-2022), in the Barcelona Institute for Global Health (ISGlobal), at Barcelona.
+
++ Master in Physics by IFT/UNES-SP (2018)
+
++ Bachelor in Physics by UNICAMP (2014)
 
 ---
 
@@ -105,9 +107,9 @@ This presentation is divided into 4 main parts:
 
 + Historical background on Dengue
 
-+ Ecological analysis of Dengue data and climate data
++ Ecological analysis of Dengue and climate data
 
-+ Epidemiological analysis of Dengue data and temperature data
++ Epidemiological analysis of Dengue and temperature data
 
 + Final remarks
 
@@ -115,7 +117,7 @@ This presentation is divided into 4 main parts:
 
 ## Research questions
 
-The thesis has two main questions that tries to answer:
+The thesis has two main underlying:
 
 * In the Ecological part: **How temperature and precipitation affects the variability of Dengue cases in a major city of Brazil?** The study covers 10 years (2010 - 2019) of Dengue incidence
 
@@ -126,27 +128,29 @@ The study covers 10 years (2010 - 2019) of Dengue hospitalization incidence
 
 class: middle, center, inverse
 
-# Historical Background
+# Historical background
 
 ---
 
-## Historical Background
+## Historical background
 
-Dengue has been a major problem on Brazil during the 20th Century:
+Dengue has been a major problem in Brazil throughout the 20th Century:
 
 - First records of Dengue in Brazil starts on the last decades of the 19th century
 
 - The main vector of Dengue, _Aedes Aegypti_ got locally eliminated, but was reintroduced in the 1970s
 
-- Since then, Dengue has continuously rising in incidence and dispersion over the Brazillian territory
+- Since then, Dengue has continuously rised in incidence and dispersion over the Brazillian territory
 
-- Since 2001, a system of notification dedicated and surveillance specific to the disease was build
+- Since 2001, a dedicated system of notification and surveillance to the disease was built
 
 ---
 
-## Dengue Disease
+## Dengue disease
 
 .pull-left[
+
+Dengue has the following characteristic:
 
   vector borne disease, human-mosquito-human cycle
 
