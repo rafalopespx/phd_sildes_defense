@@ -68,11 +68,13 @@ class: left
 
 ## About me
 
-+ Ph.D. Candidate in Physics, in the Instituto de Física Teórica - IFT/ UNESP-SP
-
-+ Bachelor in Physics by UNICAMP (2014), Master in Physics by IFT/UNES-SP (2018)
++ Ph.D. Candidate in Physics at the Instituto de Física Teórica - IFT/ UNESP-SP
 
 + With a exchange period (2021-2022), in the Barcelona Institute for Global Health (ISGlobal), at Barcelona.
+
++ Master in Physics by IFT/UNES-SP (2018)
+
++ Bachelor in Physics by UNICAMP (2014)
 
 ---
 
@@ -82,9 +84,9 @@ This presentation is divided into 4 main parts:
 
 + Historical background on Dengue
 
-+ Ecological analysis of Dengue data and climate data
++ Ecological analysis of Dengue and climate data
 
-+ Epidemiological analysis of Dengue data and temperature data
++ Epidemiological analysis of Dengue and temperature data
 
 + Final remarks
 
@@ -92,7 +94,7 @@ This presentation is divided into 4 main parts:
 
 ## Research questions
 
-The thesis has two main questions that tries to answer:
+The thesis has two main underlying questions:
 
 * In the Ecological part: **How temperature and precipitation affects the variability of Dengue cases in a major city of Brazil?** The study covers 10 years (2010 - 2019) of Dengue incidence
 
@@ -103,34 +105,36 @@ The study covers 10 years (2010 - 2019) of Dengue hospitalization incidence
 
 class: middle, center, inverse
 
-# Historical Background
+# Historical background
 
 ---
 
-## Historical Background
+## Historical background
 
-Dengue has been a major problem on Brazil during the 20th Century:
+Dengue has been a major problem in Brazil throughout the 20th Century:
 
 - First records of Dengue in Brazil starts on the last decades of the 19th century
 
 - The main vector of Dengue, _Aedes Aegypti_ got locally eliminated, but was reintroduced in the 1970s
 
-- Since then, Dengue has continuously rising in incidence and dispersion over the Brazillian territory
+- Since then, Dengue has continuously risen in incidence and dispersion over the Brazillian territory
 
-- Since 2001, a system of notification dedicated and surveillance specific to the disease was build
+- Since 2001, a dedicated system of notification and surveillance to the disease was built
 
 ---
 
-## Dengue Disease
+## Dengue disease
 
 .pull-left[
 
-  vector borne disease, human-mosquito-human cycle
+Dengue has the following characteristic:
 
-  incubation period of four- to six-day and persists until around the time fever abates, 
+  - is a vector borne disease, human-mosquito-human cycle
+
+  - has an incubation period of four- to six-day and persists until around the time fever abates, 
 which is typically three to seven days, potential of cryptic transmissions
 
-  Hyperendemic disease in Brazil, with anual cycles of outbreaks
+  - is a hyperendemic disease in Brazil, with anual cycles of outbreaks
 
 ]
 
@@ -149,7 +153,7 @@ which is typically three to seven days, potential of cryptic transmissions
 
 __Epidemiological data sources__
 
-  - From the _Sistema de Informação de Agravos de Notificação_ (SINAN), system more prompt to notify symptomatic mild cases of Dengue
+  - From the _Sistema de Informação de Agravos de Notificação_ (SINAN), system more prompt to notify symptomatic mild cases of dengue
 
   - From the _Sistema de Informação Hospitalares_ (SIH), system more prompt to notify severe cases of Dengue
 
@@ -163,31 +167,34 @@ __Climate data sources__
   - For the climate variable, we used the gridded daily ECVs taken from reanalysis products (ERA5-Land) 
 
   - From the raw ECVs were produced a weighted mean area aggregation over the municipalities (health regions, states, etc.) 
-  extent area, to create matching time series for each aggregation level.
-
+  extent area, to create matching time series for each aggregation level
 
 ]
 
 
 ---
 
-## Characteristics of Dataset
+## Characteristics of dataset
 
-- ~11.0 million of individual cases confirmed for Dengue, with information of Sex, Age, Municipality of Residence, from 2001 to 2020
+The SINAN-Dengue has:
 
-- Sparse data before 2000, due to non obligatory notification, more consistent data after 2001
+  - ~11.0 million of individual cases confirmed for Dengue, with information of Sex, Age, Municipality of Residence, from 2001 to 2020
 
-- With the majority of cases in the Southeast region and Northeast regions, ~5.7 millions and ~2.2 million cases, respectively
+  - Sparse data before 2000, due to non obligatory notification, more consistent data after 2001
+
+  - With the majority of cases in the Southeast region and Northeast regions, ~5.7 millions and ~2.2 million cases, respectively
 
 ---
 
-## Characteristics of Dengue epidemics
+## Characteristics of dengue epidemics
 
-- Strong seasonality, right after the rainy season, relation with mosquito life cycle
+The time-series of cases shows:
 
-- Hyperendemicity, endemic epidemics outbreaks of four different serotypes
+  - Strong seasonality, right after the rainy season, relation to mosquito life cycle
 
-- More recently, since 2020, raising on incidence and spread to the South region
+  - Hyperendemicity, endemic epidemics outbreaks of four different serotypes
+
+  - More recently, since 2020, has been raising on incidence and spread to the South region
 
 ---
 
@@ -203,15 +210,23 @@ In collaboration with: Brenno Caetano Troca Cabella, Renato Mendes Coutinho, Rob
 
 ---
 
-## Objectives and Questions
+## Objectives and questions
 
-**How Temperatures &amp; Total Preciptations affects the counts of Cases due to Dengue in Rio de Janeiro, during 2010-2019?**
+**How temperatures &amp; total preciptation affects the counts of cases due to dengue in Rio de Janeiro, during 2010-2019?**
 
 Objectives: 
 
--1) To quantify climate drivers by *EDM* of temperature and precipitation on counts of cases due to Dengue
+  -1) To quantify climate drivers by *EDM* of temperature and precipitation on counts of cases due to dengue
 
--2) Understand which are the climatic drivers and how much they force on cases
+  -2) Understand which are the climatic drivers and how much they force on cases
+
+---
+
+## Data sources
+
+  - We compiled the SINAN-Dengue database filtered for the Rio de Janeiro city, during the period of 2010 to 2019, for the cases time series
+  
+  - For the climate variables, we used the gridded daily temperature taken from reanalysis products (ERA5Land) which were aggregated as weighted mean areas over the municipality extent area
 
 ---
 
@@ -219,7 +234,7 @@ Objectives:
 
 Framework to analyse time series seeking for causality between them:
 
-- From the Takens Theorem we can reconstruct any dynamical system by any observation and its delays
+  - From the Takens theorem we can reconstruct any dynamical system by any observation and its delays
 
 ---
 
@@ -231,9 +246,9 @@ Framework to analyse time series seeking for causality between them:
 
 Framework to analyse time series seeking for causality between them:
 
-- From the Takens Theorem we can reconstruct any dynamical system by any observation and its delays
+  - From the Takens theorem we can reconstruct any dynamical system by any observation and its delays
 
-- This reconstruction it is called __Shadow-Manifold__, it maps complete the dynamics into the original Manifold
+  - This reconstruction it is called __Shadow-Manifold__, it maps complete the dynamics into the original manifold
 
 ---
 
@@ -245,11 +260,11 @@ Framework to analyse time series seeking for causality between them:
 
 Framework to analyse time series seeking for causality between them:
 
-- From the Takens Theorem we can reconstruct any dynamical system by any observation and its delays
+  - From the Takens theorem we can reconstruct any dynamical system by any observation and its delays
 
-- This reconstruction it is called __Shadow-Manifold__, it maps complete the dynamics into the original Manifold
+  - This reconstruction it is called __Shadow-Manifold__, it maps complete the dynamics into the original manifold
 
-- Any two __Shadow-Manifolds__ that maps each other are __Causal__ linked
+  - Any two __Shadow-Manifolds__ that maps each other are __causal__ linked
 
 ---
 
@@ -257,7 +272,7 @@ Framework to analyse time series seeking for causality between them:
 
 ---
 
-## Convergent Cross-Mapping
+## Convergent Cross-Mapping (CCM)
 
 To employ the Takens theorem in practice, we seek for points in one __Shadow-Manifold__, say `\(\mathbf{M}_X\)` with the same temporal indexes, into the other, say `\(\mathbf{M}_Y\)`, and we follow ahead those points `\(n\)` steps, to give a prediction to the future of points into the other manifold, in a equation:
 
@@ -267,13 +282,13 @@ $$
 \end{equation}`
 $$
 
-Repeating this mapping for the complete set of points of each time series, we can have a prediction of `\(Y\)` given the points of `\(X\)`, and vice-versa.
+Repeating this mapping for the complete set of points of each time series, we can have a prediction of `\(Y\)` given the points of `\(X\)`, and vice-versa
 
 ---
 
-## Causality Criteria
+## Causality criteria
 
-With the last equation, we can give a prediction for `\(Y\)` given points in `\(\mathbf{M}_X\)`, the comparison between the observed time series of `\(Y(t)\)` and the predicted time series `\(\hat{Y}(t)|\mathbf{M}_X\)`, is the measure of how strong linked each __shadow-manifold__ is to the other:
+With the last equation, we can give a prediction for `\(Y\)` given points in `\(\mathbf{M}_X\)`, the comparison between the observed time series of `\(Y(t)\)` and the predicted time series `\(\hat{Y}(t)|\mathbf{M}_X\)`, is the measure of how strong linked each __Shadow-Manifold__ is to the other:
 
 $$
 `\begin{equation}
@@ -281,13 +296,13 @@ $$
 \end{equation}`
 $$
 
-If this correlation converges to a value, given the totality of points, `\(L\)`, this is the criteria for the causality and linking between the both __Shadow-manifolds__.
+If this correlation converges to a value, given the totality of points, `\(L\)`, this is the criteria for the causality and linking between the both __Shadow-Manifolds__.
 
 ---
 
 ## Time for prediction
 
-Another part of the EDM framework is to know how much lagged a climate driver that forces into the cases, to do so we test different time for prediction, `\(tp\)`, which are different horizons for the mapping between the __shadow-manifold__, modifying the CCM equation we have:
+Another part of the EDM framework is to know how much lagged a climate driver that forces into the cases, to do so we test different time for prediction, `\(tp\)`, which are different horizons for the mapping between the __Shadow-manifold__, modifying the CCM equation we have:
 
 $$
 `\begin{equation}
@@ -301,17 +316,17 @@ Where `\(tp\)` is how much ahead of the contemporaneous time we are trying to pr
 
 ## Dengue in Rio de Janeiro city
 
-Typical procedure of *EDM*
+The typical procedure of *EDM*
 
-1) Extract the seasonality of the drivers, make a distribution of surrogate time series.
+  1) Extract the seasonality of the drivers, make a distribution of surrogate time series.
 
-2) Do the CCM with the Original time-series and 500 Surrogates series with the same seasonality pattern
+  2) Do the CCM with the original time-series and 500 surrogates series with the same seasonality pattern
 
-3) Repeat for different values of time for predicition `\(tp\)`
+  3) Repeat for different values of time for predicition `\(tp\)`
 
-4) Where in the `\(tp\)` the Original is above the 0.95th percentile of the `\(\rho_{CCM}\)` distribution for the 500 Surrogates time-series, it is significant causal relation
+  4) Where in the `\(tp\)` the original is above the 0.95th percentile of the `\(\rho_{CCM}\)` distribution for the 500 surrogates time-series, it is a significant causal relation or __driver__
 
-5) Estimate the force of causality for the drivers at the time for prediction with highest `\(\rho_{CCM}\)` by applying S-Map
+  5) Estimate the force of causality for the drivers at the time for prediction with highest `\(\rho_{CCM}\)` by applying S-Map
 
 ---
 
@@ -319,19 +334,19 @@ Typical procedure of *EDM*
 
 ---
 
-## Extracting seasonality &amp; Surrogate making
+## Extracting seasonality &amp; surrogate making
 
 The algorithm we use is:
 
-- Fit a cubic smooth spline to each climate driver, this gives a seasonal component to each driver
+  - Fit a cubic smooth spline to each climate variable, this gives a seasonal component to the time series
 
-- substract this seasonality pattern from the original driver time series
+  - Substract the seasonality pattern from the original climate time series
 
-- The residuals are shuffled yearly and after is added the seasonality pattern
+  - The residuals are shuffled yearly and added to the seasonality pattern
 
-- This new surrogate time series for the climate driver, has the same seasonal pattern but different residuals
+  - This new surrogate time series for the climate variable, has the same seasonal pattern but different residuals
 
-- Make 500 of this surrogates series
+  - Repeat this 500 times for each climate variable
 
 ---
 
@@ -339,15 +354,17 @@ The algorithm we use is:
 
 ---
 
-## Surrogate statistical test
+## Surrogate statistical test, I
 
 To create each surrogate time series, we pick the seasonality pattern and add a sample of residuals randomly shuffled:
 
-- This creates a surrogate time series for the driver, with the same seasonal pattern but different values
+  - This creates a surrogate time series for the driver, with the same seasonal pattern but different values
 
-- When putting this on the CCM function, we ask if the seasonal pattern is driving the dynamics, if yes, the surrogates will have a better prediction skill then the original time series
-
-- The dynamics will them linked to the seasonality of the driver and not to the climate driver itself
+  - When putting this on the CCM function, we ask if the seasonal pattern is driving the dynamics 
+    
+    - if yes, the surrogates will have a better prediction skill, `\(\rho_{CCM}\)`, than the original time series
+    
+    - if not, the surrogates will have a worst prediction skill, `\(\rho_{CCM}\)`, than the original time series
 
 ---
 
@@ -355,13 +372,13 @@ To create each surrogate time series, we pick the seasonality pattern and add a 
 
 ---
 
-## Surrogates testing
+## Surrogate statistical test, II
 
-Now we want to find where in the time for prediction, `\(tp\)`, the original driver is most significant causal:
+Now we want to find where in the time for prediction, `\(tp\)`, the original climate time series is the most significant __driver__:
 
-- We apply CCM on the 500 surrogates and the Original time series for various `\(tp\)` values, of maximum 17 weeks of delay
+  - We apply CCM on the 500 surrogates and the original time series for various `\(tp\)` values, of maximum 17 weeks of delay
 
-- Where the Original driver time series is above the 95th percentile of the distribution it causally significant
+  - Where the original driver time series is above the 95th percentile of the distribution it causally significant
 
 ---
 
@@ -369,11 +386,14 @@ Now we want to find where in the time for prediction, `\(tp\)`, the original dri
 
 ---
 
-## Surrogates testing
+## Surrogate statistical test, III
 
-- Where the original driver has a value of cross-mapping skill higher the 95th percentile of the distribution we color it in red
+For the causality criteria and the lagged relation the algorithm is:
 
-- We repeat this procedure of identifiying where the original driver is stastistically significant through over all the `\(tp\)` values tested
+  - Where the original time series has a value of `\(\rho_{CCM}\)` higher than the 95th percentile of the distribution, we color it in red
+
+  - We repeat this procedure of identifiying where the original climate time serie is stastistically significant through over all the `\(tp\)` values tested
+  
 ---
 
 &lt;img src="img/yearly_shuffle_boxplot_drivers_tp_sig_17_weeks.png" width="700" style="display: block; margin: auto;" /&gt;
@@ -382,11 +402,11 @@ Now we want to find where in the time for prediction, `\(tp\)`, the original dri
 
 ## Force of Interaction
 
-With the climate driver and the time for prediction where the original driver is causal significant and where it is has the greater `\(\rho\)` we estimate the force of interaction:
+With the climate __driver__ and the time for prediction, `\(tp\)` where the original time serie is causal significant and where it is has the greater `\(\rho\)`, we estimate the force of interaction:
 
-- Using the S-Map algorithm, we estimate the effect of the driver, at the `\(tp\)`, on the time series of Cases
+  - Using the S-Map algorithm, we estimate the effect of the __driver__, at the `\(tp\)` with maximum `\(\rho_{CCM}\)`, on the time series of cases
 
-- S-Map is a non-parametric method of locally weighted Jacobian Element for the prediction of the cases time-series from the climate drivers SSR
+  - S-Map is a non-parametric method to estimate the locally weighted Jacobian Element to predicts of the cases time-series from the climate drivers with a SSR built with the cases time series, and the cliamte __drivers__
 
 ---
 
@@ -400,7 +420,7 @@ Cases(t) = \mathbf{C_0} + \sum_{i=1}^{I} \mathbf{C_i}(t) x_i(t),
 \end{equation}`
 $$
 
-Where `\(I\)` is until the drivers we found as significant causal on the Cases time series. We choose the minimum value of Mean Absolute Error (MAE), between predictions and observations given by the S-Map for `\(\theta\)`. Where `\(C_i\)` are weights to pounder how great are the influences of each nearby point on the predicted point.
+Where `\(I\)` is until the __drivers__ we found as significantly causal on the cases time series. We choose the minimum value of Mean Absolute Error (MAE), between predictions and observations given by the S-Map for `\(\theta\)`. Where `\(C_i\)` are weights to pounder how great are the influences of each nearby point on the predicted point.
 
 ---
 
@@ -429,7 +449,7 @@ Cases(t) = \mathbf{C_0} + \frac{\partial Cases(t)}{\partial Precip_{max}(t-2)}Pr
 \end{multline}`
 $$
 
-Where `\(C_0\)` is a constant term and the folliwng terms are the coeffcients to be estimated locally over the SSR constructed with the time-series `\(Cases(t),Precip_{min}(t-7), Precip_{max}(t-2)\)`
+Where `\(C_0\)` is a constant term and the following terms are the coeffcients to be estimated locally over the SSR constructed with the time-series `\(Cases(t),Precip_{min}(t-7), Precip_{max}(t-2)\)`
 
 ---
 
@@ -439,13 +459,16 @@ Where `\(C_0\)` is a constant term and the folliwng terms are the coeffcients to
 
 ## Conclusion &amp; Interpretation
 
-* __Temperatures__ are climate drivers of Cases at Rio de Janeiro city, but them drives cases in the city by its seasonality and not by its variability, due to not being found as drivers by CCM. So they are a conditions that is matched by a season on year.
+  * __Precipitations__ drives the cases by variability at the right conditions, this result matches with an application of EDM on dengue time series in Puerto Rico
 
-* __Maximum Precipitation__ has an lagged effect on cases of 2 weeks, and it decreases with the rising of maximum amount precipitation, we understand it as being a driver that has a saturation effect on the forcing, flushing effects on mosquito life cycle.
+  * __Maximum Precipitation__ has an lagged effect on cases of 2 weeks, and it decreases with the rising of maximum amount precipitation
+    * we understand it as being a driver that has a saturation effect on the forcing, flushing effects on mosquito life cycle.
 
-* __Minimum Precipation__ has a lagged effect on cases of 7 week, in the same shape as Max. Preciptation, after drought any amount of precipitation helps the mosquito cycle. 
-
-* Precipitations drives the cases by variability at the right conditions.
+  * __Minimum Precipation__ has a lagged effect on cases of 7 week, in the same shape as Max. 
+    * Preciptation, after drought any amount of precipitation helps the mosquito cycle. 
+  
+  * __Temperatures__ are climate drivers of cases at Rio de Janeiro city, but drives cases in the city by its seasonality and not by its variability, due to not being found as drivers by CCM. 
+    * So they are a conditions that is matched in a season on year
 
 ---
 
@@ -457,23 +480,21 @@ In collaboration with: Xavier Basagaña, Leonardo S. L. Bastos, Fernando A. Bozz
 
 ---
 
-## Objectives and Questions
+## Objectives and questions
 
 **How ambient temperature affects the counts of hospitalization due to Dengue, during the period of 2010-2019?**
 
 Objectives: 
 
-- To quantify association of daily ambient temperature and counts of hospitalization due to Dengue
+  - To quantify association of daily ambient temperature and counts of hospitalization due to Dengue
 
 ---
 
-## Data sources and definitions:
+## Data sources:
 
-- We used the Brazil national database of authorization for hospitalization (AIH), filtered for the ICD-10 codes, ’A90’, ’A91’, ’A97’, ’A970’, ’A971’, ’A972’, ’A979’, for the hospitalization cases of Dengue, aggregated by municipality.
+  - We used the Brazil national database of authorization for hospitalization (AIH), filtered for the ICD-10 codes, ’A90’, ’A91’, ’A97’, ’A970’, ’A971’, ’A972’, ’A979’, for the hospitalization cases of Dengue, aggregated by municipality.
 
-- For the climate variables, we used the gridded daily temperature taken from reanalysis products (ERA5Land) 
-
-- We have done a weighted mean area aggregation over the municipality extent area, to create matching time series for each municipality.
+  - For the climate variables, we used the gridded daily temperature taken from reanalysis products (ERA5Land) which were aggregated as weighted mean areas over the municipality extent area, to create matching time series for each municipality.
 
 ---
 
@@ -481,27 +502,25 @@ Objectives:
 
 We did a two-stages design, to the association of the daily mean temperature and counts of hospitalization due Dengue.
 
-+ First stage: A "Time Stratified" design for the aggregated level of a each of 27 states, with a stratum for each municipality within a state, day of the week and the month on the time series.
+  + First stage: A "Time Stratified" design for the aggregated level of a each of 27 states, with a stratum for each municipality within a state, day of the week and the month on the time series
 
-+ Second stage: Multivariate Meta-analysis for the coefficients fitted and the Covariance matrix, in two levels of aggregation, for the whole country and for the 5 macro regions of Brazil. 
+  + Second stage: Multivariate Meta-analysis for the coefficients fitted and the Covariance matrix, in two levels of aggregation, for the whole country and for the 5 macro regions of Brazil
 
-  - The model on this level was a multivariate random effects model ran by a restricted maximum likelihood estimator.
-
+  - The model on this level was a multivariate random effects model ran by a restricted maximum likelihood estimator
 
 ---
 
 ## Model specification, first stage
 
-&lt;!-- Before desribing the model itself, we settle down some concepts on statistical models used. When describing a model we construct it from the likelihood we suppose it gives the distribution of the data.  --&gt;
-In this study we suppose the Dengue hospitalization counts in the city `\(i\)` at time `\(t\)` is given by a `\(Poisson(\lambda_{i,t})\)` distribution, with the conditional that `\(Y_{.,t} = \sum_i Y_{i,t}\)`, for overdispersed data it used as a `\(quasiPoisson\)` distribution to account for overdispersed data:
+We suppose the Dengue hospitalization counts in a city `\(i\)` at time `\(t\)` is given by a `\(Poisson(\lambda_{i,t})\)` distribution, with the conditional that `\(Y_{.,t} = \sum_i Y_{i,t}\)`:
 
 $$
 `\begin{equation}
-Y_{i,t} \sim quasiPoisson(\lambda_{i,t},\psi)
+Y_{i,t} \sim Poisson^*(\lambda_{i,t},\psi)
 \end{equation}`
 $$
 
-Where the `\(\lambda_{i,t}\)` and `\(\psi\)` is the parameter to control overdispersion, and we choose a log function for the link-function
+Where the `\(\lambda_{i,t}\)` is the mean of `\(Poisson\)` distribution and `\(\psi\)` is the parameter to control overdispersion, and we choose a log function for the link-function
 
 ---
 
@@ -519,12 +538,12 @@ Where `\(Y_{t,i}\)` is as before the count of cases at `\(t\)` on the i-th munic
 
 The *cross-basis* were parametrized as the standard in __DLNM__ for mean temperature: 
 
-+ A *natural splines* with 2 knots equally spaced on the range of mean temperature,
+  + A *natural splines* with 2 knots equally spaced on the range of mean temperature,
 for the structure to the doses-response
 
-+ A *natural spline* with 3 knots equally spaced on the log-scale for the lag-response structure
+  + A *natural spline* with 3 knots equally spaced on the log-scale for the lag-response structure
 
-+ 0 to 21 days of lags
+  + 0 to the date of hospitalization until 21 days of lags, before the date of hospitalization
 
 ---
 
@@ -532,9 +551,9 @@ for the structure to the doses-response
 
 Why we make use of such models? Because enviromental exposures has two main features that needs atention to be drawned:
 
-+ Normally, exposures varies in a narrow range, environmental exposures like temperature __not__, it varies along different locations.
+  + Normally, exposures varies in a narrow range, environmental exposures like temperature __not__, it varies along different locations
 
-+ Normally, exposures have a very short time-window of action, environment exposures __not__, it can acts all the time for the all the subjects.
+  + Normally, exposures have a very short time-window of action, environment exposures __not__, it can acts all the time for the all the subjects
 
 ---
 
@@ -553,9 +572,7 @@ u_i ∼ N_k (0, \psi)
 \end{equation}`
 $$
 
-Where, `\(\hat{\theta_i}\)` vector `\(k\times1\)` combined effects to the estimate, 
-`\(u_i\)` vector `\(k \times 1\)` random effects for the coefficients of study `\(i\)`.
-`\(S_i\)` matrix `\(k \times k\)` covariance matrix within studies for the study `\(i\)` and `\(\psi\)` matrix `\(k \times k\)` covariance between studies, defined by `\(k(k + 1)/2\)` variables `\(\xi\)`.
+Where `\(\hat{\theta_i}\)` is a vector of `\(k\times1\)` combined effects to the estimate, `\(u_i\)` is a vector of `\(k \times 1\)` random effects for the coefficients of study `\(i\)`. `\(S_i\)` matrix `\(k \times k\)` covariance matrix within studies for the study `\(i\)` and `\(\psi\)` matrix `\(k \times k\)` covariance between studies, defined by `\(k(k + 1)/2\)` variables `\(\xi\)`.
 
 ---
 
@@ -591,12 +608,13 @@ class: middle, center
 
 ## Conclusion &amp; Interpretation
 
-* The main finding is that are higher risk of being hospitalised by Dengue as the temperature gets higher.
-* After 20 degrees Celsius, the risk is 1·2x higher than for the minimum temperature of hospitalisation (10·8 º C)
-
-* We found a stronger immediate effect on the RR to the hospitalisation. 
-
-* We found the same patterns over each macro region of Brazil for the general association between RR hospitalisation and ambient temperature. 
+  * The main finding is that there is a higher risk of being hospitalised by Dengue as the temperature gets higher.
+  
+  * After 20 degrees Celsius, the relative risk is 1·2x higher than for the minimum temperature of hospitalisation (10·8 º C)
+  
+  * We found a stronger immediate effect on the RR to the hospitalisation, with a slight lagged effect
+  
+  * We found the same patterns over each macro region of Brazil for the general association between RR hospitalisation and ambient temperature. 
 
 ---
 
@@ -611,11 +629,11 @@ class: middle, center, inverse
 
 On this part we had studied the dynamics of mild to severe cases of Dengue in Brazil, during the a period of 10 years, from 2010 to 2019.
 
-- we investigated how temperature and precipitation drives the dynamics of cases in a major city that has a historical of endemicity od Dengue, for the cited period.
+  - we investigated how temperature and precipitation drives the dynamics of cases in a major city that has a historical of endemicity od Dengue, for the cited period.
 
-* Main finding is that precipitation is a driver of the dynamics of cases through the variability of the time-series, and it has a lagged relation for this forcing, being 2 weeks lagged for the maximum precipitation and 7 weeks for the minimum precipitation
+  * Main finding is that __precipitation is a driver of the dynamics of cases__ through the variability of the time-series, and it has a lagged relation for this forcing, being 2 weeks lagged for the maximum precipitation and 7 weeks for the minimum precipitation
 
-* Secondary finding, is that temperature has a role on the dynamics of dengue cases through seasonality
+  * Secondary finding, is that temperature has a role on the dynamics of dengue cases through seasonality
 
 ---
 
@@ -624,11 +642,23 @@ On this part we had studied the dynamics of mild to severe cases of Dengue in Br
 
 On this part we had studied the dynamics of severe hospitalized cases of Dengue in Brazil, during the a period of 10 years, from 2010 to 2019.
 
-- we investigated how temperature is associated with dengue hospitalizations in the whole country at the level of municipality, and how this can give an augmented risk to hospitalizations.
+  - we investigated how temperature is associated with dengue hospitalizations in the whole country at the level of municipality, and how this can give an augmented risk to hospitalizations.
 
-* Main finding is that temperature above 20 degrees Celsius is consistently associated with higher levels of hospistalisations, over the whole country and the for each of the macro-regions.
+  * Main finding is that __temperature above 20 degrees Celsius is consistently associated with higher levels of hospistalisations__, over the whole country and the for each of the macro-regions.
 
-* Secondary finding, is that temperature has lagged effects when producing augmented risks to the hospistalisations.
+  * Secondary finding, is that temperature has lagged effects when producing augmented risks to the hospistalisations.
+
+---
+
+## Summary
+
+On this thesis, we investigated the relation of two climate variables with dengue disease, over Brazil during the a 10 years period, from 2010 to 2019
+
+  - This thesis contribute to the general knowledge of the relations between climatic factors and dengue disease and can be viewed as a contribution to disease-ecology.
+  
+  - Although extrapolation of results obtained in one region to other regions should be considered with caution, the results presented can shed some light on the possible consequences of climate change on the range and consequences of dengue epidemics
+
+  - This thesis hinders the establishment of a more mechanistic interpretation, as no data about mosquito abundance is used on this thesis
 
 ---
 
@@ -640,22 +670,21 @@ class: middle, center
 
 ## Published Articles
 
-  * **Model-based estimation of transmissibility and reinfection of SARS-CoV-2 P. 1 variant**,\n
+  * **Model-based estimation of transmissibility and reinfection of SARS-CoV-2 P. 1 variant**,
   Coutinho, R.M., Marquitti, F.M.D., Ferreira, L.S., Borges, M.E., __da Silva, R.L.P.__, Canton, O., Portella, T.P., Poloni, S., Franco, C., Plucinski, M.M. and Lessa, F.C., 2021.
   [https://www.nature.com/articles/s43856-021-00048-6](https://www.nature.com/articles/s43856-021-00048-6) 
   Communications Medicine, 1(1), pp.1-8.
 
-  * **Brazil in the face of new SARS-CoV-2 variants: emergencies and challenges in public health**,\n 
+  * **Brazil in the face of new SARS-CoV-2 variants: emergencies and challenges in public health**, 
   Marquitti, F.M.D., Coutinho, R.M., Ferreira, L.S., Borges, M.E., Portella, T.P., __Silva, R.L.P.__, Canton, O., Poloni, S., Franco, C., Coelho, V. and Barberia, L., 2021.
   [https://www.scielo.br/j/rbepid/a/fMnYkyJKLhpwj8fF8dkbgKQ/?lang=en](https://www.scielo.br/j/rbepid/a/fMnYkyJKLhpwj8fF8dkbgKQ/?lang=en) 
   Revista Brasileira de Epidemiologia, 24.
-  
   
 ---
 
 ## Published Articles
 
-  * **Assessing the best time interval between doses in a two-dose vaccination regimen to reduce the number of deaths in an ongoing epidemic of SARS-CoV-2**,\n
+  * **Assessing the best time interval between doses in a two-dose vaccination regimen to reduce the number of deaths in an ongoing epidemic of SARS-CoV-2**,
   Souto Ferreira, L., Canton, O., __da Silva, R.L.P.__, Poloni, S., Sudbrack, V., Borges, M.E., Franco, C., Marquitti, F.M.D., de Moraes, J.C., Veras, M.A.D.S.M. and Kraenkel, R.A., 2022.
   [https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009978](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009978)
   PLoS computational biology, 18(3), p.e1009978.
@@ -664,12 +693,12 @@ class: middle, center
 
 ## Submitted Articles
 
-  * **Ambient Temperature and Dengue Hospitalisation in Brazil over a 10-year period, 2010-2019: a times series analysis**,\n
+  * **Ambient Temperature and Dengue Hospitalisation in Brazil over a 10-year period, 2010-2019: a times series analysis**,
   __da Silva, R.L.P__, Basagana, X., Bastos, L.S., Bozza, F.A. and Ranzani, O.T., 2022.
   [https://www.medrxiv.org/content/medrxiv/early/2022/04/15/2022.04.05.22273394.full.pdf](https://www.medrxiv.org/content/medrxiv/early/2022/04/15/2022.04.05.22273394.full.pdf)
   medRxiv. (Under Review in The Lancet Regional Americas)
 
-  * **Estimating the impact of implementation and timing of COVID-19 vaccination program in Brazil: a counterfactual analysis**,\n
+  * **Estimating the impact of implementation and timing of COVID-19 vaccination program in Brazil: a counterfactual analysis**,
   Ferreira, L.S., Marquitti, F.M.D., __da Silva, R.L.P__, Borges, M.E., Gomes, M.F., Cruz, O.G., Kraenkel, R.A., Coutinho, R.M., Prado, P.I. and Bastos, L.S., 2021. 
   [https://www.medrxiv.org/content/medrxiv/early/2021/12/27/2021.12.24.21268384.full.pdf](https://www.medrxiv.org/content/medrxiv/early/2021/12/27/2021.12.24.21268384.full.pdf)
    medRxiv.
