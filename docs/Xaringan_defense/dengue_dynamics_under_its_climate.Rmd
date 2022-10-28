@@ -105,11 +105,11 @@ class: left
 
 This presentation is divided into 4 main parts:
 
-+ Historical background on Dengue
++ Historical background on dengue
 
-+ Ecological analysis of Dengue and climate data
++ Ecological analysis of dengue and climate data
 
-+ Epidemiological analysis of Dengue and temperature data
++ Epidemiological analysis of dengue and temperature data
 
 + Final remarks
 
@@ -119,10 +119,10 @@ This presentation is divided into 4 main parts:
 
 The thesis has two main underlying questions:
 
-* In the Ecological part: **How temperature and precipitation affects the variability of Dengue cases in a major city of Brazil?** The study covers 10 years (2010 - 2019) of Dengue incidence
+* In the Ecological part: **How temperature and precipitation affects the variability of dengue cases in a major city of Brazil?** The study covers 10 years (2010 - 2019) of dengue incidence
 
-* In the Epidemiological part: **How temperature is associated with higher levels of Dengue hospitalizations in Brazil?**
-The study covers 10 years (2010 - 2019) of Dengue hospitalization incidence
+* In the Epidemiological part: **How temperature is associated with higher levels of dengue hospitalizations in Brazil?**
+The study covers 10 years (2010 - 2019) of dengue hospitalization incidence
 
 ---
 
@@ -136,11 +136,11 @@ class: middle, center, inverse
 
 Dengue has been a major problem in Brazil throughout the 20th Century:
 
-- First records of Dengue in Brazil starts on the last decades of the 19th century
+- First records of dengue in Brazil starts on the last decades of the 19th century
 
-- The main vector of Dengue, _Aedes Aegypti_ got locally eliminated, but was reintroduced in the 1970s
+- The main vector of dengue, _Aedes Aegypti_ got locally eliminated, but was reintroduced in the 1970s
 
-- Since then, Dengue has continuously risen in incidence and dispersion over the Brazillian territory
+- Since then, dengue has continuously risen in incidence and dispersion over the Brazillian territory
 
 - Since 2001, a dedicated system of notification and surveillance to the disease was built
 
@@ -152,12 +152,12 @@ Dengue has been a major problem in Brazil throughout the 20th Century:
 
 Dengue has the following characteristic:
 
-  - is a vector borne disease, human-mosquito-human cycle
+  - vector borne disease, human-mosquito-human cycle
 
-  - has an incubation period of four- to six-day and persists until around the time fever abates, 
+  - incubation period of four- to six-day and persists until around the time fever abates, 
 which is typically three to seven days, potential of cryptic transmissions
 
-  - is a hyperendemic disease in Brazil, with anual cycles of outbreaks
+  - hyperendemic disease in Brazil, with anual cycles of outbreaks
 
 ]
 
@@ -178,9 +178,9 @@ knitr::include_graphics("img/Aedes_aegypti.jpg")
 
 __Epidemiological data sources__
 
-  - From the _Sistema de Informação de Agravos de Notificação_ (SINAN), system more prompt to notify symptomatic mild cases of dengue
+  - _Sistema de Informação de Agravos de Notificação_ (__SINAN__), system more prompt to notify symptomatic mild cases of dengue
 
-  - From the _Sistema de Informação Hospitalares_ (SIH), system more prompt to notify severe cases of Dengue
+  - _Sistema de Informação Hospitalares_ (__SIH__), system more prompt to notify severe cases of dengue
 
 
 ]
@@ -189,9 +189,9 @@ __Epidemiological data sources__
 
 __Climate data sources__
 
-  - For the climate variable, we used the gridded daily ECVs taken from reanalysis products (ERA5-Land) 
+  - For the climate variables, we used the gridded daily ECVs taken from reanalysis products (__ERA5-Land__) 
 
-  - From the raw ECVs were produced a weighted mean area aggregation over the municipalities (health regions, states, etc.) 
+  - From the raw ECVs were produced weighted mean area aggregations over the municipalities (health regions, states, etc.) 
   extent area, to create matching time series for each aggregation level
 
 ]
@@ -203,7 +203,7 @@ __Climate data sources__
 
 The SINAN-Dengue has:
 
-  - ~11.0 million of individual cases confirmed for Dengue, with information of Sex, Age, Municipality of Residence, from 2001 to 2020
+  - ~11.0 million of individual cases confirmed for dengue, with information of Sex, Age, Municipality of Residence, from 2001 to 2020
 
   - Sparse data before 2000, due to non obligatory notification, more consistent data after 2001
 
@@ -217,7 +217,7 @@ The time-series of cases shows:
 
   - Strong seasonality, right after the rainy season, relation to mosquito life cycle
 
-  - Hyperendemicity, endemic epidemics outbreaks of four different serotypes
+  - Hyperendemicity, endemic epidemics of four different serotypes
 
   - More recently, since 2020, has been raising on incidence and spread to the South region
 
@@ -239,7 +239,7 @@ In collaboration with: Brenno Caetano Troca Cabella, Renato Mendes Coutinho, Rob
 
 ## Objectives and questions
 
-**How temperatures & total preciptation affects the counts of cases due to dengue in Rio de Janeiro, during 2010-2019?**
+**How temperature & total preciptation affects the counts of cases due to dengue in Rio de Janeiro, during 2010-2019?**
 
 Objectives: 
 
@@ -261,7 +261,7 @@ Objectives:
 
 Framework to analyse time series seeking for causality between them:
 
-  - From the Takens theorem we can reconstruct any dynamical system by any observation and its delays
+  - From the Takens theorem we can reconstruct any dynamical system by any $X_1(t)$ and its delays $X_1(t-\tau), X_1(t-2\tau),\dots$
 
 ---
 
@@ -307,7 +307,7 @@ knitr::include_graphics("img/Causality.png")
 
 ## Convergent Cross-Mapping (CCM)
 
-To employ the Takens theorem in practice, we seek for points in one __Shadow-Manifold__, say $\mathbf{M}_X$ with the same temporal indexes, into the other, say $\mathbf{M}_Y$, and we follow ahead those points $n$ steps, to give a prediction to the future of points into the other manifold, in a equation:
+EDM in practice, we seek for points in one __Shadow-Manifold__, say $\mathbf{M}_X$ with the same temporal indexes, into the other, say $\mathbf{M}_Y$, and we follow ahead those points $n$ steps, to give a prediction to the future of points into the other manifold, in a equation:
 
 $$
 \begin{equation}
@@ -347,19 +347,25 @@ Where $tp$ is how much ahead of the contemporaneous time we are trying to predic
 
 ---
 
-## Dengue in Rio de Janeiro city
+## EDM procedure
 
-The typical procedure of *EDM*
+We apply The typical procedure of *EDM* on the time series of cases of Rio de Janeiro:
 
-  1) Extract the seasonality of the drivers, make a distribution of surrogate time series.
+  1) Extract the seasonality of the climate variables, make a distribution of surrogate time series.
 
   2) Do the CCM with the original time-series and 500 surrogates series with the same seasonality pattern
 
-  3) Repeat for different values of time for predicition $tp$
+  3) Repeat 2) for different values of time for predicition $tp$
 
-  4) Where in the $tp$ the original is above the 0.95th percentile of the $\rho_{CCM}$ distribution for the 500 surrogates time-series, it is a significant causal relation or __driver__
+  4) The $tp$ with the original time series is above the 0.95th percentile of the $\rho_{CCM}$ distribution, it is a significant causal relation or __driver__
 
-  5) Estimate the force of causality for the drivers at the time for prediction with highest $\rho_{CCM}$ by applying S-Map
+  5) With the __drivers__ found, estimate the force of interaction between dengue cases and climate variable, by applying S-Map
+
+---
+
+class: middle, center
+
+# Application
 
 ---
 
@@ -393,15 +399,11 @@ knitr::include_graphics('img/patch_pattern_seasonality.png')
 
 ## Surrogate statistical test, I
 
-To create each surrogate time series, we pick the seasonality pattern and add a sample of residuals randomly shuffled:
-
-  - This creates a surrogate time series for the driver, with the same seasonal pattern but different values
-
-  - When putting this on the CCM function, we ask if the seasonal pattern is driving the dynamics 
+With 500 surrogates time series for each climate variable we can create a statistical test, by putting this on the CCM function, we ask if the seasonal pattern is driving the dynamics 
     
-    - if yes, the surrogates will have a better prediction skill, $\rho_{CCM}$, than the original time series
+  - if yes, the surrogates will have a better prediction skill, $\rho_{CCM}$, than the original time series
     
-    - if not, the surrogates will have a worst prediction skill, $\rho_{CCM}$, than the original time series
+  - if not, the surrogates will have a worst prediction skill, $\rho_{CCM}$, than the original time series
 
 ---
 
@@ -529,17 +531,17 @@ In collaboration with: Xavier Basagaña, Leonardo S. L. Bastos, Fernando A. Bozz
 
 ## Objectives and questions
 
-**How ambient temperature affects the counts of hospitalization due to Dengue, during the period of 2010-2019?**
+**How ambient temperature affects the counts of hospitalization due to dengue, during the period of 2010-2019?**
 
 Objectives: 
 
-  - To quantify association of daily ambient temperature and counts of hospitalization due to Dengue
+  - To quantify association of daily ambient temperature and counts of hospitalization due to dengue
 
 ---
 
 ## Data sources:
 
-  - We used the Brazil national database of authorization for hospitalization (AIH), filtered for the ICD-10 codes, ’A90’, ’A91’, ’A97’, ’A970’, ’A971’, ’A972’, ’A979’, for the hospitalization cases of Dengue, aggregated by municipality.
+  - We used the Brazil national database of authorization for hospitalization (AIH), filtered for the ICD-10 codes, ’A90’, ’A91’, ’A97’, ’A970’, ’A971’, ’A972’, ’A979’, for the hospitalization cases of dengue, aggregated by municipality.
 
   - For the climate variables, we used the gridded daily temperature taken from reanalysis products (ERA5Land) which were aggregated as weighted mean areas over the municipality extent area, to create matching time series for each municipality.
 
@@ -547,7 +549,7 @@ Objectives:
 
 ## Study Design
 
-We did a two-stages design, to the association of the daily mean temperature and counts of hospitalization due Dengue.
+We did a two-stages design, to the association of the daily mean temperature and counts of hospitalization due dengue.
 
   + First stage: A "Time Stratified" design for the aggregated level of a each of 27 states, with a stratum for each municipality within a state, day of the week and the month on the time series
 
@@ -559,7 +561,7 @@ We did a two-stages design, to the association of the daily mean temperature and
 
 ## Model specification, first stage
 
-We suppose the Dengue hospitalization counts in a city $i$ at time $t$ is given by a $Poisson(\lambda_{i,t})$ distribution, with the conditional that $Y_{.,t} = \sum_i Y_{i,t}$:
+We suppose the dengue hospitalization counts in a city $i$ at time $t$ is given by a $Poisson(\lambda_{i,t})$ distribution, with the conditional that $Y_{.,t} = \sum_i Y_{i,t}$:
 
 $$
 \begin{equation}
@@ -573,11 +575,11 @@ Where the $\lambda_{i,t}$ is the mean of $Poisson$ distribution and $\psi$ is th
 
 ## Model specification, first stage
 
-On each of 27 states, we run a Conditional Poisson model, for the association between Dengue hospitalizations time series and mean temperature for each municipality:
+On each of 27 states, we run a Conditional Poisson model, for the association between dengue hospitalizations time series and mean temperature for each municipality:
 
 $$log[\lambda_{i,t}] = \xi_{t,i} + f(x_{t,i},l) + \sum_{k=1}^{K}s_k(t)$$
 
-Where $Y_{t,i}$ is as before the count of cases at $t$ on the i-th municipality, $\xi_{t,i}$ the dow-month-city strata term conditioned out. $f(x_{t,i}, l)$ which is the __DLNM__ for mean temperature on the state by each day of delay, until 21 days of lags. The last term is the long-term trend for temperature trend along the whole period, a natural spline with 7 degrees of freedom by year on the whole period.
+Where $\lambda_{t,i}$ is as before the mean of count of cases at $t$ on the i-th municipality, $\xi_{t,i}$ the dow-month-city strata term conditioned out. $f(x_{t,i}, l)$ which is the __DLNM__ for mean temperature on the state by each day of delay, until 21 days of lags. The last term is the long-term trend for temperature trend along the whole period, a natural spline with 7 degrees of freedom by year on the whole period.
 
 ---
 
@@ -662,7 +664,7 @@ rmarkdown::paged_table(table)
 
 ## Conclusion & Interpretation
 
-  * The main finding is that there is a higher risk of being hospitalised by Dengue as the temperature gets higher.
+  * The main finding is that there is a higher risk of being hospitalised by dengue as the temperature gets higher.
   
   * After 20 degrees Celsius, the relative risk is 1·2x higher than for the minimum temperature of hospitalisation (10·8 º C)
   
@@ -681,9 +683,9 @@ class: middle, center, inverse
 
 ## Summary, Ecological part
 
-On this part we had studied the dynamics of mild to severe cases of Dengue in Brazil, during the a period of 10 years, from 2010 to 2019.
+On this part we had studied the dynamics of mild to severe cases of dengue in Brazil, during the a period of 10 years, from 2010 to 2019.
 
-  - we investigated how temperature and precipitation drives the dynamics of cases in a major city that has a historical of endemicity od Dengue, for the cited period.
+  - we investigated how temperature and precipitation drives the dynamics of cases in a major city that has a historical of endemicity od dengue, for the cited period.
 
   * Main finding is that __precipitation is a driver of the dynamics of cases__ through the variability of the time-series, and it has a lagged relation for this forcing, being 2 weeks lagged for the maximum precipitation and 7 weeks for the minimum precipitation
 
@@ -694,7 +696,7 @@ On this part we had studied the dynamics of mild to severe cases of Dengue in Br
 
 ## Summary, Epidemiological part
 
-On this part we had studied the dynamics of severe hospitalized cases of Dengue in Brazil, during the a period of 10 years, from 2010 to 2019.
+On this part we had studied the dynamics of severe hospitalized cases of dengue in Brazil, during the a period of 10 years, from 2010 to 2019.
 
   - we investigated how temperature is associated with dengue hospitalizations in the whole country at the level of municipality, and how this can give an augmented risk to hospitalizations.
 
@@ -747,7 +749,7 @@ class: middle, center
 
 ## Submitted Articles
 
-  * **Ambient Temperature and Dengue Hospitalisation in Brazil over a 10-year period, 2010-2019: a times series analysis**,
+  * **Ambient Temperature and dengue Hospitalisation in Brazil over a 10-year period, 2010-2019: a times series analysis**,
   __da Silva, R.L.P__, Basagana, X., Bastos, L.S., Bozza, F.A. and Ranzani, O.T., 2022.
   [https://www.medrxiv.org/content/medrxiv/early/2022/04/15/2022.04.05.22273394.full.pdf](https://www.medrxiv.org/content/medrxiv/early/2022/04/15/2022.04.05.22273394.full.pdf)
   medRxiv. (Under Review in The Lancet Regional Americas)
@@ -856,7 +858,7 @@ The embedding dimensions will be the dimension for which this correlation reache
 
 ## Model building, First stage
 
-In this study we suppose the Dengue hospitalization counts in the city $i$ at time $t$ is given by a $Poisson(\lambda_{i,t})$ distribution, with the conditional that $Y_{.,t} = \sum_i Y_{i,t}$, this actually is a $Multinomial$ model, which we use an alternative formulation of an $quasiPoisson$ distribution to account for overdispersed data:
+In this study we suppose the dengue hospitalization counts in the city $i$ at time $t$ is given by a $Poisson(\lambda_{i,t})$ distribution, with the conditional that $Y_{.,t} = \sum_i Y_{i,t}$, this actually is a $Multinomial$ model, which we use an alternative formulation of an $quasiPoisson$ distribution to account for overdispersed data:
 
 $$
 \begin{equation}
@@ -926,7 +928,7 @@ Where the $s(x_t; \boldsymbol{\eta})$ is called __cross-basis__, this is a resul
 
 ## Model building, Second stage
 
-As before, in the second stage we build a meta-analysis multivariate model to estimate, by different aggergations setting, the overall RR for Dengue hospitalization. To do so, we start imposing that for each $\hat{\theta_{i}}$ study estimates we model its variance and covariance relation, with:
+As before, in the second stage we build a meta-analysis multivariate model to estimate, by different aggergations setting, the overall RR for dengue hospitalization. To do so, we start imposing that for each $\hat{\theta_{i}}$ study estimates we model its variance and covariance relation, with:
 
 $$
 \begin{equation}
