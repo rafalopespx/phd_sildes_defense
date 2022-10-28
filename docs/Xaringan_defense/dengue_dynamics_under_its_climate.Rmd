@@ -307,15 +307,14 @@ knitr::include_graphics("img/Causality.png")
 
 ## Convergent Cross-Mapping (CCM)
 
-EDM in practice, we seek for points in one __Shadow-Manifold__, say $\mathbf{M}_X$ with the same temporal indexes, into the other, say $\mathbf{M}_Y$, and we follow ahead those points $n$ steps, to give a prediction to the future of points into the other manifold, in a equation:
+EDM in practice is to give predictions, $\hat{Y}$, of points on one __Shadow_manifold__, $\mathbf{M}_Y$, given the dynamics of point with the same time indexes, onto other manifold, $\mathbf{M}_X$, in a equation:
 
 $$
 \begin{equation}
-\hat{Y}(t+n)|\mathbf{M_X} = \sum_{i=1}^{E+1}w_iY_i(t+n)
+\hat{Y}(t)|\mathbf{M_X} = \sum_{i=1}^{E+1}w_iY_i(t)
 \end{equation}
 $$
-
-Repeating this mapping for the complete set of points of each time series, we can have a prediction of $Y$ given the points of $X$, and vice-versa
+Repeating this mapping for the complete set of points of each time series, we can have a prediction of $\hat{Y}$ given the points of $X$, and vice-versa.
 
 ---
 
