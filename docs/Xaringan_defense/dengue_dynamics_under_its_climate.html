@@ -469,8 +469,7 @@ Where `\(C_0\)` is a constant term and the following terms are the coeffcients t
   * __Minimum Precipation__ has a lagged effect on cases of 7 week, in the same shape as Max. 
     * Preciptation, after drought any amount of precipitation helps the mosquito cycle. 
   
-  * __Temperatures__ are climate drivers of cases at Rio de Janeiro city, but drives cases in the city by its seasonality and not by its variability, due to not being found as drivers by CCM. 
-    * So they are a conditions that is matched in a season on year
+  * __Temperatures__ are climate drivers of cases at Rio de Janeiro city, but drives cases in the city by its seasonality and not by its variability.
 
 ---
 
@@ -532,7 +531,7 @@ On each of 27 states, we run a Conditional Poisson model, for the association be
 
 `$$log[\lambda_{i,t}] = \xi_{t,i} + f(x_{t,i},l) + \sum_{k=1}^{K}s_k(t)$$`
 
-Where `\(Y_{t,i}\)` is as before the count of cases at `\(t\)` on the i-th municipality, `\(\xi_{t,i}\)` the dow-month-city strata term conditioned out. `\(f(x_{t,i}, l)\)` which is the __DLNM__ for mean temperature on the state by each day of delay, until 21 days of lags. The last term is the long-term trend for temperature trend along the whole period, a natural spline with 7 degrees of freedom by year on the whole period.
+Where `\(\lambda_{t,i}\)` is as before the mean of count of cases at `\(t\)` on the i-th municipality, `\(\xi_{t,i}\)` the dow-month-city strata term conditioned out. `\(f(x_{t,i}, l)\)` which is the __DLNM__ for mean temperature on the state by each day of delay, until 21 days of lags. The last term is the long-term trend for temperature trend along the whole period, a natural spline with 7 degrees of freedom by year on the whole period.
 
 ---
 

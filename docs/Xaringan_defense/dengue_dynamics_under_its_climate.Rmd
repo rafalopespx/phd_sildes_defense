@@ -516,8 +516,7 @@ knitr::include_graphics('img/patchwork_coef_precip_tp_17.png')
   * __Minimum Precipation__ has a lagged effect on cases of 7 week, in the same shape as Max. 
     * Preciptation, after drought any amount of precipitation helps the mosquito cycle. 
   
-  * __Temperatures__ are climate drivers of cases at Rio de Janeiro city, but drives cases in the city by its seasonality and not by its variability, due to not being found as drivers by CCM. 
-    * So they are a conditions that is matched in a season on year
+  * __Temperatures__ are climate drivers of cases at Rio de Janeiro city, but drives cases in the city by its seasonality and not by its variability.
 
 ---
 
