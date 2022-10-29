@@ -274,29 +274,28 @@ Framework to analyse time series seeking for causality between them:
 
 ## Convergent Cross-Mapping (CCM)
 
-EDM in practice, we seek for points in one __Shadow-Manifold__, say `\(\mathbf{M}_X\)` with the same temporal indexes, into the other, say `\(\mathbf{M}_Y\)`, and we follow ahead those points `\(n\)` steps, to give a prediction to the future of points into the other manifold, in a equation:
+EDM in practice is to give predictions, `\(\hat{Y}\)`, of points on one __Shadow_manifold__, `\(\mathbf{M}_Y\)`, given the dynamics of point with the same time indexes, onto other manifold, `\(\mathbf{M}_X\)`, in a equation:
 
 $$
 `\begin{equation}
-\hat{Y}(t+n)|\mathbf{M_X} = \sum_{i=1}^{E+1}w_iY_i(t+n)
+\hat{Y}(t)|\mathbf{M_X} = \sum_{i=1}^{E+1}w_iY_i(t)
 \end{equation}`
 $$
-
-Repeating this mapping for the complete set of points of each time series, we can have a prediction of `\(Y\)` given the points of `\(X\)`, and vice-versa
+Repeating this mapping for the complete set of points of each time series, we can have a prediction of `\(\hat{Y}\)` given the points of `\(X\)`, and vice-versa.
 
 ---
 
 ## Causality criteria
 
-With the last equation, we can give a prediction for `\(Y\)` given points in `\(\mathbf{M}_X\)`, the comparison between the observed time series of `\(Y(t)\)` and the predicted time series `\(\hat{Y}(t)|\mathbf{M}_X\)`, is the measure of how strong linked each __Shadow-Manifold__ is to the other:
+With the last equation, we gave a prediction, `\(\hat{Y}\)`, for `\(Y\)`, given the points in `\(\mathbf{M}_X\)`, the comparison between the observed time series of `\(Y(t)\)` and the predicted time series `\(\hat{Y}(t)\)`, is the measure of how strong linked each __Shadow-Manifold__ is to the other:
 
 $$
 `\begin{equation}
-\rho = \rho_{Y,\hat{Y}|\mathbf{M_X}} = \rho_{CCM}(L) = \langle \frac{Cov[Y,\hat{Y}|\mathbf{M_X}]}{\sigma_Y\sigma_{\hat{Y}|\mathbf{M_X}}} \rangle(L)
+\rho_{CCM}(L) = \frac{Cov[O, P]}{\sigma_O \sigma_P}=\frac{Cov[Y,\hat{Y}|\mathbf{M_X}]}{\sigma_Y \sigma_{\hat{Y}|\mathbf{M_X}}}
 \end{equation}`
 $$
 
-If this correlation converges to a value, given the totality of points, `\(L\)`, this is the criteria for the causality and linking between the both __Shadow-Manifolds__.
+If this correlation converges to a value, as we take more and more points, this is the criteria for the causality and linking between the both __Shadow-Manifolds__.
 
 ---
 
@@ -659,7 +658,7 @@ On this thesis, we investigated the relation of two climate variables with dengu
   
   - Although extrapolation of results obtained in one region to other regions should be considered with caution, the results presented can shed some light on the possible consequences of climate change on the range and consequences of dengue epidemics
 
-  - This thesis hinders the establishment of a more mechanistic interpretation, as no data about mosquito abundance is used on this thesis
+  - This thesis does not permit the establishment of a more mechanistic interpretation, as no data about mosquito abundance is used on this thesis
 
 ---
 
@@ -702,7 +701,7 @@ class: middle, center
   * **Estimating the impact of implementation and timing of COVID-19 vaccination program in Brazil: a counterfactual analysis**,
   Ferreira, L.S., Marquitti, F.M.D., __da Silva, R.L.P__, Borges, M.E., Gomes, M.F., Cruz, O.G., Kraenkel, R.A., Coutinho, R.M., Prado, P.I. and Bastos, L.S., 2021. 
   [https://www.medrxiv.org/content/medrxiv/early/2021/12/27/2021.12.24.21268384.full.pdf](https://www.medrxiv.org/content/medrxiv/early/2021/12/27/2021.12.24.21268384.full.pdf)
-   medRxiv.
+   medRxiv. (Accepted in the The Lancet Regional Americas)
 
 ---
 
@@ -759,6 +758,12 @@ class: middle, center, inverse
 
 ---
 
+class: middle, center
+
+# Empirical Dynamical Modelling
+
+---
+
 ## Takens Theorem
 
 The importance of Takens theorem, in view of applications, is that we can reconstruct an
@@ -798,6 +803,16 @@ $$
 $$
 
 The embedding dimensions will be the dimension for which this correlation reaches its maximum, this means the dimension is sufficient to reconstruct completely the original dynamics
+
+---
+
+&lt;img src="img/ccm_figure.png" width="800" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: middle, center
+
+# Distributed Lag Non-linear Model
 
 ---
 
