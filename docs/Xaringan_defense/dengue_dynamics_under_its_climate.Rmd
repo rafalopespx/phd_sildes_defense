@@ -307,7 +307,7 @@ knitr::include_graphics("img/Causality.png")
 
 ## Convergent Cross-Mapping (CCM)
 
-EDM in practice is to give predictions, $\hat{Y}$, of points on one __Shadow_manifold__, $\mathbf{M}_Y$, given the dynamics of point with the same time indexes, onto other manifold, $\mathbf{M}_X$, in a equation:
+EDM in practice is to give predictions, $\hat{Y}$, of points on one __Shadow-manifold__, $\mathbf{M}_Y$, given the dynamics of point with the same time indexes, onto other manifold, $\mathbf{M}_X$, in a equation:
 
 $$
 \begin{equation}
@@ -324,25 +324,25 @@ With the last equation, we gave a prediction, $\hat{Y}$, for $Y$, given the poin
 
 $$
 \begin{equation}
-\rho_{CCM}(L) = \frac{Cov[O, P]}{\sigma_O \sigma_P}=\frac{Cov[Y,\hat{Y}|\mathbf{M_X}]}{\sigma_Y \sigma_{\hat{Y}|\mathbf{M_X}}}
+\rho_{CCM} = \frac{Cov[O, P]}{\sigma_O \sigma_P}
 \end{equation}
 $$
 
-If this correlation converges to a value, as we take more and more points, this is the criteria for the causality and linking between the both __Shadow-Manifolds__.
+If this correlation converges to a value, as we take more and more points, this is the criteria for the causality and linking between the both __Shadow-Manifolds__, here $\mathbf{M}_X$ and $\mathbf{M}_Y$
 
 ---
 
 ## Time for prediction
 
-Another part of the EDM framework is to know how much lagged a climate driver that forces into the cases, to do so we test different time for prediction, $tp$, which are different horizons for the mapping between the __Shadow-manifold__, modifying the CCM equation we have:
+Another part of the EDM framework is to know how much lagged a climate driver that forces into the cases, to do so we test different time for prediction, $tp$, on the CCM equation, rewriting it, we have:
 
 $$
 \begin{equation}
-\hat{Y}(t+n+tp)|\mathbf{M_X} = \sum_{i=1}^{E+1}w_iY_i(t+n)
+\hat{Y}(t+tp)|\mathbf{M_X} = \sum_{i=1}^{E+1}w_iY_i(t)
 \end{equation}
 $$
 
-Where $tp$ is how much ahead of the contemporaneous time we are trying to predict, or how much the relation is lagged from the contemporaneous time, after testing different numbers of $tp$, we end with a distribution of $\rho_{CCM}$ for different lags
+Where $tp$ is how much ahead of the contemporaneous time we are trying to predict, or how much the relation is lagged, after testing different numbers of $tp$, we end up with a distribution of $\rho_{CCM}$ for different lags
 
 ---
 
@@ -356,7 +356,7 @@ We apply The typical procedure of *EDM* on the time series of cases of Rio de Ja
 
   3) Repeat 2) for different values of time for predicition $tp$
 
-  4) The $tp$ with the original time series is above the 0.95th percentile of the $\rho_{CCM}$ distribution, it is a significant causal relation or __driver__
+  4) The $tp$ with the original time series is above the 0.95th percentile of the $\rho_{CCM}$ distribution, it is a significant causal relation or a __driver__
 
   5) With the __drivers__ found, estimate the force of interaction between dengue cases and climate variable, by applying S-Map
 
@@ -513,7 +513,7 @@ knitr::include_graphics('img/patchwork_coef_precip_tp_17.png')
     * we understand it as being a driver that has a saturation effect on the forcing, flushing effects on mosquito life cycle.
 
   * __Minimum Precipation__ has a lagged effect on cases of 7 week, in the same shape as Max. 
-    * Preciptation, after drought any amount of precipitation helps the mosquito cycle. 
+    * after drought any amount of precipitation helps the mosquito cycle. 
   
   * __Temperatures__ are climate drivers of cases at Rio de Janeiro city, but drives cases in the city by its seasonality and not by its variability.
 
@@ -863,6 +863,20 @@ The embedding dimensions will be the dimension for which this correlation reache
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, out.width=800, fig.align='center'}
 knitr::include_graphics("img/ccm_figure.png")
 ```
+
+---
+
+## Causality criteria
+
+With the last equation, we gave a prediction, $\hat{Y}$, for $Y$, given the points in $\mathbf{M}_X$, the comparison between the observed time series of $Y(t)$ and the predicted time series $\hat{Y}(t)$, is the measure of how strong linked each __Shadow-Manifold__ is to the other:
+
+$$
+\begin{equation}
+\rho_{CCM} = \frac{Cov[O, P]}{\sigma_O \sigma_P} = \frac{Cov[Y,\hat{Y}|\mathbf{M_X}]}{\sigma_Y\sigma_{\hat{Y}|\mathbf{M_X}}}
+\end{equation}
+$$
+
+If this correlation converges to a value, as we take more and more points, this is the criteria for the causality and linking between the both __Shadow-Manifolds__, here $\mathbf{M}_X$ and $\mathbf{M}_Y$
 
 ---
 
