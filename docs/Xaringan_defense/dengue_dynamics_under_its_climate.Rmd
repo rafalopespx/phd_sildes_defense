@@ -157,7 +157,7 @@ Dengue has the following characteristic:
   - incubation period of four- to six-day and persists until around the time fever abates, 
 which is typically three to seven days, potential of cryptic transmissions
 
-  - hyperendemic disease in Brazil, with anual cycles of outbreaks
+  - endemic disease in Brazil, with anual cycles of outbreaks
 
 ]
 
@@ -217,7 +217,7 @@ The time-series of cases shows:
 
   - Strong seasonality, right after the rainy season, relation to mosquito life cycle
 
-  - Hyperendemicity, endemic epidemics of four different serotypes
+  - endemicity, endemic of annual outbreaks  of four different serotypes
 
   - More recently, since 2020, has been raising on incidence and spread to the South region
 
