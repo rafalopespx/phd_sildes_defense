@@ -7,6 +7,19 @@ site: distill::distill_website
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Welcome! This website has my PhD slides defense
+This website is dedicated to my Ph.D. Thesis, defended October 31st, 2022. 
+
+The thesis is entitle "Dengue dynamics under its climeate drivers: Analysis with ecological and epidemiological frameworks"
 
 [here you found those slides](Xaringan_defense/dengue_dynamics_under_its_climate.html)
+
+## Abstract
+
+Dengue has been a disease present in the Brazilian ecological and epidemiological scenarios since the mid-twentieth century. From the 1990s, the cases that, before, were sporadic,and distributed without any clear association to population and territory variables, began to exhibit a new dynamic. In 2001, by a law that made notification of dengue cases mandatory, notifications of the disease exploded and dengue began to be seen as a public health problem. 
+
+Dengue is a disease transmitted by the mosquito *Aedes Aegypti*. It has a clear seasonal component. However, even if it is understood that certain seasonality is derived from climate, we still lack better quantitative analyses of the effects of climate on dengue epidemics.
+
+In this thesis, time-series of dengue cases and essential climate variables (ECV), such as temperature and precipitation, are analysed using *convergent cross-mapping* (CCM). CCM is based on the result of the *Takens* theorem which states that the attractor of a dynamical system can be reconstructed from the time-series of one of the variables of the system, and the time series of this same variable with time delays. Based on this result, methods for determining causal relations have been developed. We use these methods and show that, in the case of the city of Rio de Janeiro, precipitation is the most important ECV relent for dengue epidemics.. 
+
+Dengue, in a less common way, can lead to hospitalization according to previous infection history and weather conditions. Using time-series of hospitalized dengue cases and temperature series, we explore which are the risks of developing a more severe dengue condition given temperature exposure. To this end, we use distributed lag non-linear models (DLNM), which, by using delays of a series of an exposure factor in a generalized linear model with predictors of the response series, in our case the series of dengue hospitalizations, provides a statistical association between these factors. This allows us to account for relative risks for each temperature benchmark. In a further development , starting at the municipalities level, we perform a meta-analysis of this association, first by macro regions of Brazil and second for the whole country, from which we derive a functional form for the relative risk that each temperature percentile has in making a dengue-case a possible hospitalization for dengue.
+
